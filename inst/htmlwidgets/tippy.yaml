@@ -1,0 +1,6 @@
+dependencies:
+ - name: tippyjs
+   version: 0.17.0
+   src: htmlwidgets/lib/tippyjs-0.17.0
+   script: tippy.min.js
+   stylesheet: tippy.css
