@@ -13,7 +13,7 @@ HTMLWidgets.widget({
       renderValue: function(x) {
 
         // TODO: code to render the widget, e.g.
-        el.innerText = x.text;
+        el.innerHTML = x.text;
         el.setAttribute("title", x.tooltip);
 
         Tippy('#' + el.id,
