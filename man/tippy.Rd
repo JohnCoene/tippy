@@ -4,7 +4,7 @@
 \alias{tippy}
 \title{Create a tooltip}
 \usage{
-tippy(text, tooltip, position = "top", animation = "shift",
+tippy(text, element, tooltip, position = "top", animation = "shift",
   trigger = "mouseenter focus", interactive = FALSE,
   interactiveBorder = 2, delay = 0, hideDelay = 0, arrow = FALSE,
   arrowSize = "regular", animateFill = TRUE, duration = 375,
@@ -16,6 +16,8 @@ tippy(text, tooltip, position = "top", animation = "shift",
 }
 \arguments{
 \item{text}{Element text.}
+
+\item{element}{Id of element to apply tooltip to.}
 
 \item{tooltip}{Element tooltip.}
 
@@ -109,5 +111,21 @@ tippy("Hover me!", tooltip = "Hi, I'm the tooltip!", animation = "scale",
   duration = 1000, position = "bottom")
 tippy("Click me!", tooltip = "Hi, I'm the tooltip!", trigger = "click",
   theme = "light")
+
+# use tooltip on other elements.
+if(interactive()){
+  library(shiny)
+  
+  ui <- fluidPage(
+    br(), br(), br(),
+    fluidRow(column(12, tippy("Standard tooltip", tooltip = "The tooltip"))),
+    fluidRow(column(12, textInput("inputId", "text"))),
+    tippy(element = "inputId", tooltip =  "Tooltip on other element")
+  )
+  
+  server <- function(input, output){}
+  
+  shinyApp(ui, server)
+}
 
 }

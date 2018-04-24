@@ -3,6 +3,7 @@
 #' Add tooltips to your document.
 #'
 #' @param text Element text.
+#' @param element Id of element to apply tooltip to.
 #' @param tooltip Element tooltip.
 #' @param position Specifies which direction to position the tooltip on the element.
 #'          Valid values are \code{top}, \code{bottom}, \code{left}, \code{right}.
@@ -64,11 +65,27 @@
 #'   duration = 1000, position = "bottom")
 #' tippy("Click me!", tooltip = "Hi, I'm the tooltip!", trigger = "click",
 #'   theme = "light")
+#' 
+#' # use tooltip on other elements.
+#' if(interactive()){
+#'   library(shiny)
+#'   
+#'   ui <- fluidPage(
+#'     br(), br(), br(),
+#'     fluidRow(column(12, tippy("Standard tooltip", tooltip = "The tooltip"))),
+#'     fluidRow(column(12, textInput("inputId", "text"))),
+#'     tippy(element = "inputId", tooltip =  "Tooltip on other element")
+#'   )
+#'   
+#'   server <- function(input, output){}
+#'   
+#'   shinyApp(ui, server)
+#' }
 #'
 #' @import htmlwidgets
-#'
+#' 
 #' @export
-tippy <- function(text, tooltip, position = "top", animation = "shift", trigger = "mouseenter focus",
+tippy <- function(text, element, tooltip, position = "top", animation = "shift", trigger = "mouseenter focus",
                   interactive = FALSE, interactiveBorder = 2, delay = 0, hideDelay = 0,
                   arrow = FALSE, arrowSize = "regular", animateFill = TRUE,
                   duration = 375, hideDuration = NULL, html = FALSE, size = "regular",
@@ -77,41 +94,44 @@ tippy <- function(text, tooltip, position = "top", animation = "shift", trigger 
                   sticky = FALSE, stickyDuration = 200, zIndex = 9999, touchHold = FALSE,
                   width = NULL, height = NULL, elementId = NULL) {
 
-  if(missing(text) && is.null(html)) stop("must pass text")
-  if(missing(tooltip)) stop("must pass tooltip")
-
-  jsbool <- function(x) ifelse(isTRUE(x), "true", "false")
+  if(missing(tooltip)) stop("must pass tooltip", call. = FALSE)
+  if(missing(text) && is.null(html) && missing(element)) stop("must pass text or element.", call. = FALSE)
 
   # forward options using x
   x = list(
-    text = text,
     tooltip = tooltip,
     position = position,
     animation = animation,
     trigger = trigger,
-    interactive = jsbool(interactive),
+    interactive = interactive,
     interactiveBorder = interactiveBorder,
     delay = delay,
     hideDelay = hideDelay,
-    arrow = jsbool(arrow),
+    arrow = arrow,
     arrowSize = arrowSize,
-    animateFill = jsbool(animateFill),
+    animateFill = animateFill,
     duration = duration,
     hideDuration = ifelse(is.null(hideDuration), duration , hideDuration),
-    html = jsbool(html),
+    html = html,
     distance = distance,
     theme = theme,
     offset = offset,
-    hideOnClick = jsbool(hideOnClick),
-    multiple = jsbool(multiple),
-    followCursor = jsbool(followCursor),
-    inertia = jsbool(inertia),
+    hideOnClick = hideOnClick,
+    multiple = multiple,
+    followCursor = followCursor,
+    inertia = inertia,
     flipDuration = flipDuration,
-    sticky = jsbool(sticky),
-    stickyDuration = jsbool(stickyDuration),
+    sticky = sticky,
+    stickyDuration = stickyDuration,
     zIndex = zIndex,
-    touchHold = jsbool(touchHold)
+    touchHold = touchHold
   )
+  
+  if(!missing(text))
+    x$text <- text
+  
+  if(!missing(element))
+    x$element <- element
 
   # create widget
   htmlwidgets::createWidget(
@@ -124,9 +144,9 @@ tippy <- function(text, tooltip, position = "top", animation = "shift", trigger 
   )
 }
 
-tippy_html <- function(id, style, class, ...){
-  htmltools::tags$span(id = id, class = class, ...)
-}
+# tippy_html <- function(id, style, class, ...){
+#   htmltools::tags$span(id = id, class = class, ...)
+# }
 
 #' Shiny bindings for tippy
 #'

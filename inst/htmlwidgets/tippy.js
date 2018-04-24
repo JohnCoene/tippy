@@ -11,12 +11,24 @@ HTMLWidgets.widget({
     return {
 
       renderValue: function(x) {
+        
+        var id = el.id;
 
         // TODO: code to render the widget, e.g.
-        el.innerHTML = x.text;
-        el.setAttribute("title", x.tooltip);
+        if(x.hasOwnProperty('text')){
+          var element = '<span id=' + id + ' title="' + x.tooltip +'">'+ x.text + '</span>';
+          el.parentNode.innerHTML = element;
+          
+          //el.innerHTML = x.text;
+          //el.setAttribute("title", x.tooltip); 
+        }
+        
+        if(x.hasOwnProperty('element')){
+          id = x.element; 
+          document.getElementById(id).setAttribute("title", x.tooltip); 
+        }
 
-        Tippy('#' + el.id,
+        Tippy('#' + id,
         {
           position: x.position,
           animation: x.animation,
