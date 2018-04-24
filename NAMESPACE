@@ -3,4 +3,5 @@
 export(renderTippy)
 export(tippy)
 export(tippyOutput)
+export(use_tippy)
 import(htmlwidgets)

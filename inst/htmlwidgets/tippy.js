@@ -13,49 +13,18 @@ HTMLWidgets.widget({
       renderValue: function(x) {
         
         var id = el.id;
-
-        // TODO: code to render the widget, e.g.
-        if(x.hasOwnProperty('text')){
-          var element = '<span id=' + id + ' title="' + x.tooltip +'">'+ x.text + '</span>';
-          el.parentNode.innerHTML = element;
-          
-          //el.innerHTML = x.text;
-          //el.setAttribute("title", x.tooltip); 
-        }
         
         if(x.hasOwnProperty('element')){
-          id = x.element; 
-          document.getElementById(id).setAttribute("title", x.tooltip); 
+          id = x.element;
+          var sel = document.getElementById(id);
+          sel.setAttribute("title", x.tooltip);
+          el.style.display = "none";
+        } else {
+          el.innerHTML = x.text;
+          el.setAttribute("title", x.tooltip);
         }
 
-        Tippy('#' + id,
-        {
-          position: x.position,
-          animation: x.animation,
-          trigger: x.trigger,
-          interactive: x.interactive,
-          interactiveBorder: x.interactiveBorder,
-          delay: x.delay,
-          hideDelay: x.hideDelay,
-          arrow: x.arrow,
-          arrowSize: x.arrowSize,
-          animateFill: x.animateFill,
-          duration: x.duration,
-          hideDuration: x.hideDuration,
-          html: x.html,
-          distance: x.distance,
-          theme: x.theme,
-          offset: x.offset,
-          hideOnClick: x.hideOnClick,
-          multiple: x.multiple,
-          followCursor: x.followCursor,
-          inertia: x.inertia,
-          flipDuration: x.flipDuration,
-          sticky: x.sticky,
-          stickyDuration: x.stickyDuration,
-          zIndex: x.zIndex,
-          touchHold: x.touchHold
-        });
+        Tippy('#' + id, x.opts);
 
       },
 
