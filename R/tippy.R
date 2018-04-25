@@ -86,7 +86,7 @@ use_tippy <- function(elementId, tooltip, ...){
     width = NULL,
     height = NULL,
     package = 'tippy',
-    elementId = elementId
+    elementId = NULL
   )
 }
 
