@@ -1,0 +1,7 @@
+
+url: http://tippy.john-coene.com
+
+template:
+  params:
+    bootswatch: cosmo
+    ganalytics: UA-74544116-1

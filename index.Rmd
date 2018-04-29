@@ -10,8 +10,6 @@
 devtools::install_github("JohnCoene/tippy")
 ```
 
-## [Documentation](http://tippy.john-coene.com/)
-
 ## Examples
 
 ```r
