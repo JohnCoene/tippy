@@ -57,7 +57,9 @@ call_tippy <- function(target, ...){
   opts <- list(...)
   opts <- jsonlite::toJSON(opts, auto_unbox = TRUE, pretty = FALSE)
   
-  fn <- paste0("tippy('", target, "',", opts, ")")
+  fn <- paste0("document.onreadystatechange = function () {
+                    tippy('", target, "',", opts, ");
+               }")
   
   shiny::tagList(
     shiny::tags$script(fn)
