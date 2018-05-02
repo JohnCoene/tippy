@@ -11,10 +11,10 @@
 #'
 #' @examples
 #' tippy("Hover me!", tooltip = "Hi, I'm the tooltip!")
-#' tippy("Hover me!", tooltip = "Hi, I'm the tooltip!", position = "right",
+#' tippy("Hover me!", tooltip = "Hi, I'm the tooltip!", placement = "right",
 #'   theme = "light")
 #' tippy("Hover me!", tooltip = "Hi, I'm the tooltip!", animation = "scale",
-#'   duration = 1000, position = "bottom")
+#'   duration = 1000, placement = "bottom")
 #' tippy("Click me!", tooltip = "Hi, I'm the tooltip!", trigger = "click",
 #'   theme = "light")
 #' 
@@ -26,11 +26,13 @@
 #'   ui = fluidPage(
 #'     textInput("input", "input with tooltip"),
 #'     tippy("Some text", tooltip = "Tiiiip"),
-#'     use_tippy("input", "Tooltip", position = "right")
+#'     tippy_this("input", "Tooltip", placement = "right")
 #'  ),
 #'  server = function(input, output) {}
 #' )
 #' }
+#' 
+#' @seealso \href{https://atomiks.github.io/tippyjs/}{official documentation}
 #'
 #' @import htmlwidgets
 #' 
@@ -65,7 +67,7 @@ tippy <- function(text, tooltip, ...,
 
 #' @rdname tippy
 #' @export
-use_tippy <- function(elementId, tooltip, ...){
+tippy_this <- function(elementId, tooltip, ...){
   
   
   if(missing(tooltip)) stop("must pass tooltip.", call. = FALSE)

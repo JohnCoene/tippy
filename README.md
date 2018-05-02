@@ -36,14 +36,32 @@ tippy("Click me!",
 # in shiny
 library(shiny)
 
-ui <- fluidPage(
-  br(), br(), br(),
-  fluidRow(column(12, tippy("Standard tooltip", tooltip = "The tooltip"))),
-  fluidRow(column(12, textInput("inputId", "text"))),
-  tippy(element = "inputId", tooltip =  "Tooltip on other element")
+# use tooltip on other elements.
+library(shiny)
+
+shinyApp(
+  ui = fluidPage(
+    textInput("input", "input with tooltip"),
+    tippy("Some text", tooltip = "Tiiiip"),
+    tippy_this("input", "Tooltip", placement = "right")
+ ),
+ server = function(input, output) {}
 )
 
-server <- function(input, output){}
+# dynamic
+library(shiny)
 
-shinyApp(ui, server)
+shinyApp(
+  ui = fluidPage(
+    use_tippy(),
+    p("Some text", title = "tooltip"),
+    p("Some text", title = "tooltip"),
+    p("Some text", title = "tooltip"),
+    p("Some text", title = "tooltip"),
+    p("Some text", title = "tooltip"),
+    p("Some text", title = "tooltip"),
+    call_tippy("[title]", placement = "top")
+ ),
+ server = function(input, output) {}
+)
 ```

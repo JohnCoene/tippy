@@ -2,12 +2,12 @@
 % Please edit documentation in R/tippy.R
 \name{tippy}
 \alias{tippy}
-\alias{use_tippy}
+\alias{tippy_this}
 \title{Create a tooltip}
 \usage{
 tippy(text, tooltip, ..., width = NULL, height = NULL, elementId = NULL)
 
-use_tippy(elementId, tooltip, ...)
+tippy_this(elementId, tooltip, ...)
 }
 \arguments{
 \item{text}{Element text.}
@@ -26,10 +26,10 @@ Add tooltips to your document.
 }
 \examples{
 tippy("Hover me!", tooltip = "Hi, I'm the tooltip!")
-tippy("Hover me!", tooltip = "Hi, I'm the tooltip!", position = "right",
+tippy("Hover me!", tooltip = "Hi, I'm the tooltip!", placement = "right",
   theme = "light")
 tippy("Hover me!", tooltip = "Hi, I'm the tooltip!", animation = "scale",
-  duration = 1000, position = "bottom")
+  duration = 1000, placement = "bottom")
 tippy("Click me!", tooltip = "Hi, I'm the tooltip!", trigger = "click",
   theme = "light")
 
@@ -41,10 +41,13 @@ shinyApp(
   ui = fluidPage(
     textInput("input", "input with tooltip"),
     tippy("Some text", tooltip = "Tiiiip"),
-    use_tippy("input", "Tooltip", position = "right")
+    tippy_this("input", "Tooltip", placement = "right")
  ),
  server = function(input, output) {}
 )
 }
 
+}
+\seealso{
+\href{https://atomiks.github.io/tippyjs/}{official documentation}
 }

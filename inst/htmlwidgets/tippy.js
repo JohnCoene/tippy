@@ -24,7 +24,7 @@ HTMLWidgets.widget({
           el.setAttribute("title", x.tooltip);
         }
 
-        Tippy('#' + id, x.opts);
+        tippy('#' + id, x.opts);
 
       },
 
