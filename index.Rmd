@@ -1,24 +1,32 @@
 [![Build Status](https://travis-ci.org/JohnCoene/tippy.svg?branch=master)](https://travis-ci.org/JohnCoene/tippy)
 
-# tippy
+```{r}
+library(tippy)
+```
+
+`r tippy("<h1>Tippy</h1>", "TIPPY!")`
 
 [Tippy.js](https://atomiks.github.io/tippyjs) R htmlwidget.
 
 ## Install
 
-```r
+```{r, eval = FALSE}
 devtools::install_github("JohnCoene/tippy")
 ```
 
 ## Examples
 
-```r
+In R markdown.
+
+```{r}
+library(tippy)
+
 # standard
 tippy("Hover me!", tooltip = "Hi, I'm the tooltip!")
 
 tippy("Hover me!", 
   tooltip = "Hi, I'm the tooltip!", 
-  position = "right",
+  placement = "right",
   theme = "light")
 
 tippy("Hover me!", 
@@ -30,15 +38,19 @@ tippy("Click me!",
   tooltip = "Hi, I'm the tooltip!", 
   trigger = "click",
   theme = "light")
+```
 
+In Shiny.
+
+```{r, eval = FALSE}
 # in shiny
 library(shiny)
 
 ui <- fluidPage(
   br(), br(), br(),
   fluidRow(column(12, tippy("Standard tooltip", tooltip = "The tooltip"))),
-  fluidRow(column(12, textInput("inputId", "text"))),
-  tippy(element = "inputId", tooltip =  "Tooltip on other element")
+  fluidRow(column(12, textInput("textInput", "text"))),
+  tippy_this(element = "textInput", tooltip =  "Tooltip on other element")
 )
 
 server <- function(input, output){}
