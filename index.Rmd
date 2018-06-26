@@ -12,6 +12,7 @@ library(tippy)
 
 ```{r, eval = FALSE}
 devtools::install_github("JohnCoene/tippy")
+devtools::install_bitbucket("JohnCoene/tippy")
 ```
 
 ## Examples

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Add Tooltips to 'R markdown' Documents or 'Shiny' Apps • tippy</title>
-<!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/yeti/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Add Tooltips to 'R markdown' Documents or 'Shiny' Apps">
@@ -25,7 +25,7 @@
 </head>
 <body>
     <div class="container template-article">
-      <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <header><div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
@@ -43,15 +43,28 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fa fa-home"></span>
      
   </a>
 </li>
 <li>
-  <a href="reference/index.html">Reference</a>
+  <a href="reference/">Reference</a>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/JohnCoene/tippy">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://bitbucket.org/JohnCoene/tippy">
+    <span class="fa fa-bitbucket fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -68,12 +81,13 @@
     
 
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(tippy)</a></code></pre></div>
-<span id="htmlwidget-b2c3c84a2c62a7a6a9de" class="tippy html-widget" width="960" height="500"></span>
-<script type="application/json" data-for="htmlwidget-b2c3c84a2c62a7a6a9de">{"x":{"opts":[],"tooltip":"TIPPY!","text":"<h1>Tippy<\/h1>"},"evals":[],"jsHooks":[]}</script><p><a href="https://atomiks.github.io/tippyjs">Tippy.js</a> R htmlwidget.</p>
+<span id="htmlwidget-8f03b9b816c95a135a7a" class="tippy html-widget" width="960" height="500"></span>
+<script type="application/json" data-for="htmlwidget-8f03b9b816c95a135a7a">{"x":{"opts":[],"tooltip":"TIPPY!","text":"<h1>Tippy<\/h1>"},"evals":[],"jsHooks":[]}</script><p><a href="https://atomiks.github.io/tippyjs">Tippy.js</a> R htmlwidget.</p>
 <div id="install" class="section level2">
 <h2 class="hasAnchor">
 <a href="#install" class="anchor"></a>Install</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"JohnCoene/tippy"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"JohnCoene/tippy"</span>)</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_bitbucket">install_bitbucket</a></span>(<span class="st">"JohnCoene/tippy"</span>)</a></code></pre></div>
 </div>
 <div id="examples" class="section level2">
 <h2 class="hasAnchor">
@@ -83,23 +97,23 @@
 <a class="sourceLine" id="cb3-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co"># standard</span></a>
 <a class="sourceLine" id="cb3-4" data-line-number="4"><span class="kw"><a href="reference/tippy.html">tippy</a></span>(<span class="st">"Hover me!"</span>, <span class="dt">tooltip =</span> <span class="st">"Hi, I'm the tooltip!"</span>)</a></code></pre></div>
-<span id="htmlwidget-bb7a62fe9c29fc5f64cc" class="tippy html-widget" width="700" height="432.632880098888"></span>
-<script type="application/json" data-for="htmlwidget-bb7a62fe9c29fc5f64cc">{"x":{"opts":[],"tooltip":"Hi, I'm the tooltip!","text":"Hover me!"},"evals":[],"jsHooks":[]}</script><div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="reference/tippy.html">tippy</a></span>(<span class="st">"Hover me!"</span>, </a>
+<span id="htmlwidget-5cfe1d403dcdd59bc86a" class="tippy html-widget" width="700" height="432.632880098888"></span>
+<script type="application/json" data-for="htmlwidget-5cfe1d403dcdd59bc86a">{"x":{"opts":[],"tooltip":"Hi, I'm the tooltip!","text":"Hover me!"},"evals":[],"jsHooks":[]}</script><div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="reference/tippy.html">tippy</a></span>(<span class="st">"Hover me!"</span>, </a>
 <a class="sourceLine" id="cb4-2" data-line-number="2">  <span class="dt">tooltip =</span> <span class="st">"Hi, I'm the tooltip!"</span>, </a>
 <a class="sourceLine" id="cb4-3" data-line-number="3">  <span class="dt">placement =</span> <span class="st">"right"</span>,</a>
 <a class="sourceLine" id="cb4-4" data-line-number="4">  <span class="dt">theme =</span> <span class="st">"light"</span>)</a></code></pre></div>
-<span id="htmlwidget-ad6718082db2f344e416" class="tippy html-widget" width="700" height="432.632880098888"></span>
-<script type="application/json" data-for="htmlwidget-ad6718082db2f344e416">{"x":{"opts":{"placement":"right","theme":"light"},"tooltip":"Hi, I'm the tooltip!","text":"Hover me!"},"evals":[],"jsHooks":[]}</script><div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="reference/tippy.html">tippy</a></span>(<span class="st">"Hover me!"</span>, </a>
+<span id="htmlwidget-a2d18d484856020e1b0b" class="tippy html-widget" width="700" height="432.632880098888"></span>
+<script type="application/json" data-for="htmlwidget-a2d18d484856020e1b0b">{"x":{"opts":{"placement":"right","theme":"light"},"tooltip":"Hi, I'm the tooltip!","text":"Hover me!"},"evals":[],"jsHooks":[]}</script><div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="reference/tippy.html">tippy</a></span>(<span class="st">"Hover me!"</span>, </a>
 <a class="sourceLine" id="cb5-2" data-line-number="2">  <span class="dt">tooltip =</span> <span class="st">"Hi, I'm the tooltip!"</span>, </a>
 <a class="sourceLine" id="cb5-3" data-line-number="3">  <span class="dt">animation =</span> <span class="st">"scale"</span>,</a>
 <a class="sourceLine" id="cb5-4" data-line-number="4">  <span class="dt">duration =</span> <span class="dv">1000</span>, <span class="dt">position =</span> <span class="st">"bottom"</span>)</a></code></pre></div>
-<span id="htmlwidget-6be8c485a4af1283424d" class="tippy html-widget" width="700" height="432.632880098888"></span>
-<script type="application/json" data-for="htmlwidget-6be8c485a4af1283424d">{"x":{"opts":{"animation":"scale","duration":1000,"position":"bottom"},"tooltip":"Hi, I'm the tooltip!","text":"Hover me!"},"evals":[],"jsHooks":[]}</script><div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="reference/tippy.html">tippy</a></span>(<span class="st">"Click me!"</span>, </a>
+<span id="htmlwidget-cf4e4f03b8abd3d6c4b6" class="tippy html-widget" width="700" height="432.632880098888"></span>
+<script type="application/json" data-for="htmlwidget-cf4e4f03b8abd3d6c4b6">{"x":{"opts":{"animation":"scale","duration":1000,"position":"bottom"},"tooltip":"Hi, I'm the tooltip!","text":"Hover me!"},"evals":[],"jsHooks":[]}</script><div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="reference/tippy.html">tippy</a></span>(<span class="st">"Click me!"</span>, </a>
 <a class="sourceLine" id="cb6-2" data-line-number="2">  <span class="dt">tooltip =</span> <span class="st">"Hi, I'm the tooltip!"</span>, </a>
 <a class="sourceLine" id="cb6-3" data-line-number="3">  <span class="dt">trigger =</span> <span class="st">"click"</span>,</a>
 <a class="sourceLine" id="cb6-4" data-line-number="4">  <span class="dt">theme =</span> <span class="st">"light"</span>)</a></code></pre></div>
-<span id="htmlwidget-42faa30bdc313af074bd" class="tippy html-widget" width="700" height="432.632880098888"></span>
-<script type="application/json" data-for="htmlwidget-42faa30bdc313af074bd">{"x":{"opts":{"trigger":"click","theme":"light"},"tooltip":"Hi, I'm the tooltip!","text":"Click me!"},"evals":[],"jsHooks":[]}</script><p>In Shiny.</p>
+<span id="htmlwidget-1a9c6a01f497b62cbcb0" class="tippy html-widget" width="700" height="432.632880098888"></span>
+<script type="application/json" data-for="htmlwidget-1a9c6a01f497b62cbcb0">{"x":{"opts":{"trigger":"click","theme":"light"},"tooltip":"Hi, I'm the tooltip!","text":"Click me!"},"evals":[],"jsHooks":[]}</script><p>In Shiny.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co"># in shiny</span></a>
 <a class="sourceLine" id="cb7-2" data-line-number="2"><span class="kw">library</span>(shiny)</a>
 <a class="sourceLine" id="cb7-3" data-line-number="3"></a>

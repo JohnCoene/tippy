@@ -1,7 +1,19 @@
-
-url: http://tippy.john-coene.com
-
 template:
   params:
-    bootswatch: cosmo
+    bootswatch: yeti
     ganalytics: UA-74544116-1
+
+navbar:
+  type: inverse
+  title: "echarts"
+  left:
+    - icon: fa-home
+      href: index.html
+    - text: "Reference"
+      href: "reference/"
+  right:
+    - icon: fa-github fa-lg
+      href: https://github.com/JohnCoene/tippy
+    - icon: fa-bitbucket fa-lg
+      href: https://bitbucket.org/JohnCoene/tippy
+

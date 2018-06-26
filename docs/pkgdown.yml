@@ -2,7 +2,4 @@ pandoc: 2.2.1
 pkgdown: 1.1.0
 pkgdown_sha: ~
 articles: []
-urls:
-  reference: http://tippy.john-coene.com/reference
-  article: http://tippy.john-coene.com/articles
 
