@@ -10,6 +10,14 @@ library(tippy)
 
 ## Install
 
+Stable CRAN release.
+
+```{r, eval = FALSE}
+install.packages("tippy") 
+```
+
+Or the development version.
+
 ```{r, eval = FALSE}
 devtools::install_github("JohnCoene/tippy")
 devtools::install_bitbucket("JohnCoene/tippy")
