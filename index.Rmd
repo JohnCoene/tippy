@@ -9,14 +9,14 @@ library(htmltools)
 div(
   class = "row",
   div(
-    class = "col-md-2",
+    class = "col-md-3",
     img(
       src = "logo.png",
       class = "responsive-img img-responsive"
     )
   ),
   div(
-    class = "col-md-8",
+    class = "col-md-9",
     tippy(
       "<h1>Tippy</h1>",
       "TIPPY",
@@ -58,7 +58,7 @@ devtools::install_bitbucket("JohnCoene/tippy")
 
 ### R Markdown
 
-In `r tippy("R markdown.", "Just like this one!")`.
+In `r tippy("R markdown", "Just like this one!")`.
 
 ```{r}
 library(tippy)
@@ -88,7 +88,7 @@ tippy(
 )
 ```
 
-You can also use in in-line, `tippy("like this", "Here's the tooltip")`
+You can also use in in-line, `tippy("like this", "Here's the tooltip")`.
 
 ### Shiny
 
