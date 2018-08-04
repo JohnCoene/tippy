@@ -2,13 +2,42 @@
 
 ```{r, include=FALSE}
 library(tippy)
+library(htmltools)
 ```
 
-<img src="logo.png" align = "right" style = "max-height: 150px;padding:5px;" />
-
-`r tippy("<h1>Tippy</h1>", "TIPPY!", size = "large")`
-
-A `r tippy("small package", "Just 6 functions!")` to include tooltips in your Shiny apps or `r tippy("R markdown documents", "Just like this one!")`.
+```{r, echo=FALSE}
+div(
+  class = "row",
+  div(
+    class = "col-md-2",
+    img(
+      src = "logo.png",
+      class = "responsive-img img-responsive"
+    )
+  ),
+  div(
+    class = "col-md-8",
+    tippy(
+      "<h1>Tippy</h1>",
+      "TIPPY",
+      size = "large"
+    ),
+    br(),
+    p(
+      "A",
+      tippy(
+        "small package",
+        "Just 6 functions!"
+      ),
+      "to include tooltips in Shiny apps and",
+      tippy(
+        "R Markdown documents",
+        "Just like this one"
+      )
+    )
+  )
+)
+```
 
 ## Install
 

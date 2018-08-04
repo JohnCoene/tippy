@@ -81,18 +81,28 @@
     
     
 
-<p><img src="logo.png" align="right" style="max-height: 150px;padding:5px;"></p>
-<span id="htmlwidget-25f3f48778ffd72f073b" class="tippy html-widget" width="960" height="500"></span>
-<script type="application/json" data-for="htmlwidget-25f3f48778ffd72f073b">{"x":{"opts":{"size":"large"},"tooltip":"TIPPY!","text":"<h1>Tippy<\/h1>"},"evals":[],"jsHooks":[]}</script><p>A <span id="htmlwidget-38234033228b3966c406" class="tippy html-widget" width="960" height="500"></span>
-<script type="application/json" data-for="htmlwidget-38234033228b3966c406">{"x":{"opts":[],"tooltip":"Just 6 functions!","text":"small package"},"evals":[],"jsHooks":[]}</script> to include tooltips in your Shiny apps or <span id="htmlwidget-db668a1f7f4f178169d7" class="tippy html-widget" width="960" height="500"></span>
-<script type="application/json" data-for="htmlwidget-db668a1f7f4f178169d7">{"x":{"opts":[],"tooltip":"Just like this one!","text":"R markdown documents"},"evals":[],"jsHooks":[]}</script>.</p>
+<div class="row">
+<div class="col-md-2">
+<img src="logo.png" class="responsive-img img-responsive">
+</div>
+<div class="col-md-8">
+<span id="htmlwidget-3cd4fd39fb347c36d64b" class="tippy html-widget" width="960" height="500"></span>
+<script type="application/json" data-for="htmlwidget-3cd4fd39fb347c36d64b">{"x":{"opts":{"size":"large"},"tooltip":"TIPPY","text":"<h1>Tippy<\/h1>"},"evals":[],"jsHooks":[]}</script><br><p>
+A
+<span id="htmlwidget-95265f99fc990d1c65e7" class="tippy html-widget" width="960" height="500"></span>
+<script type="application/json" data-for="htmlwidget-95265f99fc990d1c65e7">{"x":{"opts":[],"tooltip":"Just 6 functions!","text":"small package"},"evals":[],"jsHooks":[]}</script>
+to include tooltips in Shiny apps and
+<span id="htmlwidget-25d37aac77e2e01b53e5" class="tippy html-widget" width="960" height="500"></span>
+<script type="application/json" data-for="htmlwidget-25d37aac77e2e01b53e5">{"x":{"opts":[],"tooltip":"Just like this one","text":"R Markdown documents"},"evals":[],"jsHooks":[]}</script></p>
+</div>
+</div>
 <div id="install" class="section level2">
 <h2 class="hasAnchor">
 <a href="#install" class="anchor"></a>Install</h2>
 <p>Stable CRAN release.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">"tippy"</span>) </code></pre></div>
-<p>Or the <span id="htmlwidget-48648958d3c35b49806b" class="tippy html-widget" width="960" height="500"></span>
-<script type="application/json" data-for="htmlwidget-48648958d3c35b49806b">{"x":{"opts":[],"tooltip":"On Github and Bitbucket","text":"development version"},"evals":[],"jsHooks":[]}</script>.</p>
+<p>Or the <span id="htmlwidget-7c3e731278e93dc3817d" class="tippy html-widget" width="960" height="500"></span>
+<script type="application/json" data-for="htmlwidget-7c3e731278e93dc3817d">{"x":{"opts":[],"tooltip":"On Github and Bitbucket","text":"development version"},"evals":[],"jsHooks":[]}</script>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"JohnCoene/tippy"</span>)
 devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_bitbucket">install_bitbucket</a></span>(<span class="st">"JohnCoene/tippy"</span>)</code></pre></div>
 </div>
@@ -102,35 +112,35 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <div id="r-markdown" class="section level3">
 <h3 class="hasAnchor">
 <a href="#r-markdown" class="anchor"></a>R Markdown</h3>
-<p>In <span id="htmlwidget-e00b507d90083f56c71b" class="tippy html-widget" width="960" height="500"></span>
-<script type="application/json" data-for="htmlwidget-e00b507d90083f56c71b">{"x":{"opts":[],"tooltip":"Just like this one!","text":"R markdown."},"evals":[],"jsHooks":[]}</script>.</p>
+<p>In <span id="htmlwidget-33cfde483347dcaebb43" class="tippy html-widget" width="960" height="500"></span>
+<script type="application/json" data-for="htmlwidget-33cfde483347dcaebb43">{"x":{"opts":[],"tooltip":"Just like this one!","text":"R markdown."},"evals":[],"jsHooks":[]}</script>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tippy)
 
 <span class="co"># standard</span>
-<span class="kw"><a href="http://www.rdocumentation.org/packages/tippy/topics/tippy">tippy</a></span>(<span class="st">"Hover me!"</span>, <span class="dt">tooltip =</span> <span class="st">"Hi, I'm the tooltip!"</span>)</code></pre></div>
-<span id="htmlwidget-c3613369fd8f4f3a33bf" class="tippy html-widget" width="700" height="432.632880098888"></span>
-<script type="application/json" data-for="htmlwidget-c3613369fd8f4f3a33bf">{"x":{"opts":[],"tooltip":"Hi, I'm the tooltip!","text":"Hover me!"},"evals":[],"jsHooks":[]}</script><div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/tippy/topics/tippy">tippy</a></span>(
+<span class="kw"><a href="reference/tippy.html">tippy</a></span>(<span class="st">"Hover me!"</span>, <span class="dt">tooltip =</span> <span class="st">"Hi, I'm the tooltip!"</span>)</code></pre></div>
+<span id="htmlwidget-96d344e93f3c651c39f9" class="tippy html-widget" width="700" height="432.632880098888"></span>
+<script type="application/json" data-for="htmlwidget-96d344e93f3c651c39f9">{"x":{"opts":[],"tooltip":"Hi, I'm the tooltip!","text":"Hover me!"},"evals":[],"jsHooks":[]}</script><div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/tippy.html">tippy</a></span>(
   <span class="st">"Hover me!"</span>, 
   <span class="dt">tooltip =</span> <span class="st">"Hi, I'm the tooltip!"</span>, 
   <span class="dt">placement =</span> <span class="st">"right"</span>,
   <span class="dt">arrow =</span> <span class="ot">TRUE</span>
 )</code></pre></div>
-<span id="htmlwidget-cd74955379bd584eca2b" class="tippy html-widget" width="700" height="432.632880098888"></span>
-<script type="application/json" data-for="htmlwidget-cd74955379bd584eca2b">{"x":{"opts":{"placement":"right","arrow":true},"tooltip":"Hi, I'm the tooltip!","text":"Hover me!"},"evals":[],"jsHooks":[]}</script><div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/tippy/topics/tippy">tippy</a></span>(
+<span id="htmlwidget-41f90f4dc8a4a2c13cb2" class="tippy html-widget" width="700" height="432.632880098888"></span>
+<script type="application/json" data-for="htmlwidget-41f90f4dc8a4a2c13cb2">{"x":{"opts":{"placement":"right","arrow":true},"tooltip":"Hi, I'm the tooltip!","text":"Hover me!"},"evals":[],"jsHooks":[]}</script><div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/tippy.html">tippy</a></span>(
   <span class="st">"Hover me!"</span>, 
   <span class="dt">tooltip =</span> <span class="st">"Hi, I'm the tooltip!"</span>, 
   <span class="dt">animation =</span> <span class="st">"scale"</span>,
   <span class="dt">duration =</span> <span class="dv">1000</span>, 
   <span class="dt">placement =</span> <span class="st">"bottom"</span>
 )</code></pre></div>
-<span id="htmlwidget-619ea1e5c379f5b0f870" class="tippy html-widget" width="700" height="432.632880098888"></span>
-<script type="application/json" data-for="htmlwidget-619ea1e5c379f5b0f870">{"x":{"opts":{"animation":"scale","duration":1000,"placement":"bottom"},"tooltip":"Hi, I'm the tooltip!","text":"Hover me!"},"evals":[],"jsHooks":[]}</script><div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/tippy/topics/tippy">tippy</a></span>(
+<span id="htmlwidget-11a733142b29ec6df49e" class="tippy html-widget" width="700" height="432.632880098888"></span>
+<script type="application/json" data-for="htmlwidget-11a733142b29ec6df49e">{"x":{"opts":{"animation":"scale","duration":1000,"placement":"bottom"},"tooltip":"Hi, I'm the tooltip!","text":"Hover me!"},"evals":[],"jsHooks":[]}</script><div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/tippy.html">tippy</a></span>(
   <span class="st">"Click me!"</span>, 
   <span class="dt">tooltip =</span> <span class="st">"Hi, I'm the tooltip!"</span>, 
   <span class="dt">trigger =</span> <span class="st">"click"</span>
 )</code></pre></div>
-<span id="htmlwidget-82c61bd3d24d021a9016" class="tippy html-widget" width="700" height="432.632880098888"></span>
-<script type="application/json" data-for="htmlwidget-82c61bd3d24d021a9016">{"x":{"opts":{"trigger":"click"},"tooltip":"Hi, I'm the tooltip!","text":"Click me!"},"evals":[],"jsHooks":[]}</script>
+<span id="htmlwidget-112913dbeaa8807c6580" class="tippy html-widget" width="700" height="432.632880098888"></span>
+<script type="application/json" data-for="htmlwidget-112913dbeaa8807c6580">{"x":{"opts":{"trigger":"click"},"tooltip":"Hi, I'm the tooltip!","text":"Click me!"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="shiny" class="section level3">
 <h3 class="hasAnchor">
@@ -140,9 +150,9 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 
 ui &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/shiny/topics/fluidPage">fluidPage</a></span>(
   <span class="kw"><a href="http://www.rdocumentation.org/packages/shiny/topics/builder">br</a></span>(), <span class="kw"><a href="http://www.rdocumentation.org/packages/shiny/topics/builder">br</a></span>(), <span class="kw"><a href="http://www.rdocumentation.org/packages/shiny/topics/builder">br</a></span>(),
-  <span class="kw"><a href="http://www.rdocumentation.org/packages/shiny/topics/fluidPage">fluidRow</a></span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/shiny/topics/column">column</a></span>(<span class="dv">12</span>, <span class="kw"><a href="http://www.rdocumentation.org/packages/tippy/topics/tippy">tippy</a></span>(<span class="st">"Standard tooltip"</span>, <span class="dt">tooltip =</span> <span class="st">"The tooltip"</span>))),
+  <span class="kw"><a href="http://www.rdocumentation.org/packages/shiny/topics/fluidPage">fluidRow</a></span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/shiny/topics/column">column</a></span>(<span class="dv">12</span>, <span class="kw"><a href="reference/tippy.html">tippy</a></span>(<span class="st">"Standard tooltip"</span>, <span class="dt">tooltip =</span> <span class="st">"The tooltip"</span>))),
   <span class="kw"><a href="http://www.rdocumentation.org/packages/shiny/topics/fluidPage">fluidRow</a></span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/shiny/topics/column">column</a></span>(<span class="dv">12</span>, <span class="kw"><a href="http://www.rdocumentation.org/packages/shiny/topics/textInput">textInput</a></span>(<span class="st">"textInput"</span>, <span class="st">"text"</span>))),
-  <span class="kw"><a href="http://www.rdocumentation.org/packages/tippy/topics/tippy">tippy_this</a></span>(<span class="dt">element =</span> <span class="st">"textInput"</span>, <span class="dt">tooltip =</span>  <span class="st">"Tooltip on other element"</span>)
+  <span class="kw"><a href="reference/tippy.html">tippy_this</a></span>(<span class="dt">element =</span> <span class="st">"textInput"</span>, <span class="dt">tooltip =</span>  <span class="st">"Tooltip on other element"</span>)
 )
 
 server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output){}
@@ -153,14 +163,14 @@ server &lt;-<span class="st"> </span><span class="cf">function</span>(input, out
 
 <span class="kw"><a href="http://www.rdocumentation.org/packages/shiny/topics/shinyApp">shinyApp</a></span>(
   <span class="dt">ui =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/shiny/topics/fluidPage">fluidPage</a></span>(
-    <span class="kw"><a href="http://www.rdocumentation.org/packages/tippy/topics/use_tippy">use_tippy</a></span>(),
+    <span class="kw"><a href="reference/use_tippy.html">use_tippy</a></span>(),
     <span class="kw"><a href="http://www.rdocumentation.org/packages/shiny/topics/builder">p</a></span>(<span class="st">"Some text"</span>, <span class="dt">title =</span> <span class="st">"tooltip"</span>),
     <span class="kw"><a href="http://www.rdocumentation.org/packages/shiny/topics/builder">p</a></span>(<span class="st">"Some text"</span>, <span class="dt">title =</span> <span class="st">"tooltip"</span>),
     <span class="kw"><a href="http://www.rdocumentation.org/packages/shiny/topics/builder">p</a></span>(<span class="st">"Some text"</span>, <span class="dt">title =</span> <span class="st">"tooltip"</span>),
     <span class="kw"><a href="http://www.rdocumentation.org/packages/shiny/topics/builder">p</a></span>(<span class="st">"Some text"</span>, <span class="dt">title =</span> <span class="st">"tooltip"</span>),
     <span class="kw"><a href="http://www.rdocumentation.org/packages/shiny/topics/builder">p</a></span>(<span class="st">"Some text"</span>, <span class="dt">title =</span> <span class="st">"tooltip"</span>),
     <span class="kw"><a href="http://www.rdocumentation.org/packages/shiny/topics/builder">p</a></span>(<span class="st">"Some text"</span>, <span class="dt">title =</span> <span class="st">"tooltip"</span>),
-    <span class="kw"><a href="http://www.rdocumentation.org/packages/tippy/topics/use_tippy">call_tippy</a></span>(<span class="st">"[title]"</span>) <span class="co"># all elements with title</span>
+    <span class="kw"><a href="reference/use_tippy.html">call_tippy</a></span>(<span class="st">"[title]"</span>) <span class="co"># all elements with title</span>
  ),
  <span class="dt">server =</span> <span class="cf">function</span>(input, output) {}
 )</code></pre></div>
