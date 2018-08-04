@@ -2,6 +2,8 @@
 
 # tippy
 
+![tippy](/man/figures/logo.png)
+
 [Tippy.js](https://atomiks.github.io/tippyjs) R htmlwidget.
 
 ## Install
@@ -15,4 +17,4 @@ devtools::install_github("JohnCoene/tippy")
 devtools::install_bitbucket("JohnCoene/tippy")
 ```
 
-## [Documentation](http://tippy.john-coene.com/)
+### [Documentation](http://tippy.john-coene.com/)

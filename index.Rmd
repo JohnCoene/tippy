@@ -88,6 +88,8 @@ tippy(
 )
 ```
 
+You can also use in in-line, `tippy("like this", "Here's the tooltip")`
+
 ### Shiny
 
 Works in Shiny apps.
