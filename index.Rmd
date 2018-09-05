@@ -17,10 +17,12 @@ div(
   ),
   div(
     class = "col-md-9",
-    tippy(
-      "<h1>Tippy</h1>",
-      "TIPPY",
-      size = "large"
+    h1(
+      tippy(
+        "Tippy",
+        "Tooltips!!!",
+        size = "large"
+      )
     ),
     br(),
     p(
