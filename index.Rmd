@@ -8,22 +8,22 @@ library(tippy)
 
 [Tippy.js](https://atomiks.github.io/tippyjs) R htmlwidget.
 
-## Install
+`r htmltools::h2(tippy("Install", "It's on CRAN!"))`
 
-Stable CRAN release.
+Stable `r tippy("CRAN", "It's stable!")` release.
 
 ```{r, eval = FALSE}
 install.packages("tippy") 
 ```
 
-Or the development version.
+Or the `r tippy("development", "It's unstable!")` version.
 
 ```{r, eval = FALSE}
 devtools::install_github("JohnCoene/tippy")
 devtools::install_bitbucket("JohnCoene/tippy")
 ```
 
-## Examples
+`r htmltools::h2(tippy("Examples", "Examples!"))`
 
 In R markdown.
 
@@ -38,7 +38,7 @@ tippy("Hover me!",
   placement = "right",
   theme = "light")
 
-tippy("Hover me!", 
+tippy("<strong>Works with html!</strong>", 
   tooltip = "Hi, I'm the tooltip!", 
   animation = "scale",
   duration = 1000, position = "bottom")
