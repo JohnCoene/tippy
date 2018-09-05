@@ -1,12 +1,43 @@
 [![Build Status](https://travis-ci.org/JohnCoene/tippy.svg?branch=master)](https://travis-ci.org/JohnCoene/tippy)
 
-```{r}
+```{r, include=FALSE}
 library(tippy)
+library(htmltools)
 ```
 
-`r tippy("<h1>Tippy</h1>", "TIPPY!")`
-
-[Tippy.js](https://atomiks.github.io/tippyjs) R htmlwidget.
+```{r, echo=FALSE}
+div(
+  class = "row",
+  div(
+    class = "col-md-3",
+    img(
+      src = "logo.png",
+      class = "responsive-img img-responsive"
+    )
+  ),
+  div(
+    class = "col-md-9",
+    tippy(
+      "<h1>Tippy</h1>",
+      "TIPPY",
+      size = "large"
+    ),
+    br(),
+    p(
+      "A",
+      tippy(
+        "small package",
+        "Just 6 functions!"
+      ),
+      "to include tooltips in Shiny apps and",
+      tippy(
+        "R Markdown documents",
+        "Just like this one"
+      )
+    )
+  )
+)
+```
 
 `r htmltools::h2(tippy("Install", "It's on CRAN!"))`
 
@@ -25,7 +56,9 @@ devtools::install_bitbucket("JohnCoene/tippy")
 
 `r htmltools::h2(tippy("Examples", "Examples!"))`
 
-In R markdown.
+### R Markdown
+
+In `r tippy("R markdown", "Just like this one!")`.
 
 ```{r}
 library(tippy)
@@ -33,26 +66,34 @@ library(tippy)
 # standard
 tippy("Hover me!", tooltip = "Hi, I'm the tooltip!")
 
-tippy("Hover me!", 
+tippy(
+  "Hover me!", 
   tooltip = "Hi, I'm the tooltip!", 
   placement = "right",
-  theme = "light")
+  arrow = TRUE
+)
 
 tippy("<strong>Works with html!</strong>", 
   tooltip = "Hi, I'm the tooltip!", 
   animation = "scale",
-  duration = 1000, position = "bottom")
+  duration = 1000, 
+  placement = "bottom"
+)
 
-tippy("Click me!", 
+tippy(
+  "Click me!", 
   tooltip = "Hi, I'm the tooltip!", 
-  trigger = "click",
-  theme = "light")
+  trigger = "click"
+)
 ```
 
-In Shiny.
+You can also use in in-line, `tippy("like this", "Here's the tooltip")`.
+
+### Shiny
+
+Works in Shiny apps.
 
 ```{r, eval = FALSE}
-# in shiny
 library(shiny)
 
 ui <- fluidPage(
@@ -65,4 +106,24 @@ ui <- fluidPage(
 server <- function(input, output){}
 
 shinyApp(ui, server)
+```
+
+You can also easily call tippy on multiple elements at once.
+
+```{r, eval=FALSE}
+library(shiny)
+
+shinyApp(
+  ui = fluidPage(
+    use_tippy(),
+    p("Some text", title = "tooltip"),
+    p("Some text", title = "tooltip"),
+    p("Some text", title = "tooltip"),
+    p("Some text", title = "tooltip"),
+    p("Some text", title = "tooltip"),
+    p("Some text", title = "tooltip"),
+    call_tippy("[title]") # all elements with title
+ ),
+ server = function(input, output) {}
+)
 ```
