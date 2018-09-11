@@ -5,7 +5,8 @@
 \alias{tippy_this}
 \title{Create a tooltip}
 \usage{
-tippy(text, tooltip, ..., width = NULL, height = NULL, elementId = NULL)
+tippy(text, tooltip, ..., width = NULL, height = NULL,
+  elementId = NULL)
 
 tippy_this(elementId, tooltip, ...)
 }
