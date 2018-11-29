@@ -4,10 +4,9 @@
 #'
 #' @param text Element text.
 #' @param tooltip Element tooltip.
-#' @param height,width height and width of sparkline htmlwidget
-#'          specified in any valid \code{CSS} size unit.
+#' @param element An object of class \code{shiny.tag}.
 #' @param elementId \code{string} id as a valid \code{CSS} element id.
-#' @param ... Any other options from \href{https://github.com/atomiks/tippyjs#options}{the official documentation}.
+#' @param ... Any other options from \href{https://atomiks.github.io/tippyjs/#all-options}{the official documentation}.
 #'
 #' @examples
 #' tippy("Hover me!", tooltip = "Hi, I'm the tooltip!")
@@ -24,9 +23,7 @@
 #' 
 #' shinyApp(
 #'   ui = fluidPage(
-#'     textInput("input", "input with tooltip"),
-#'     tippy("Some text", tooltip = "Tiiiip"),
-#'     tippy_this("input", "Tooltip", placement = "right")
+#'     with_tippy(textInput("input", "input with tooltip"), "Input text", placement = "right")
 #'  ),
 #'  server = function(input, output) {}
 #' )
@@ -38,8 +35,7 @@
 #' 
 #' @rdname tippy
 #' @export
-tippy <- function(text, tooltip, ...,
-                  width = NULL, height = NULL, elementId = NULL) {
+tippy <- function(text, tooltip, ..., elementId = NULL) {
 
   if(missing(tooltip)) stop("must pass tooltip.", call. = FALSE)
   if(missing(text)) stop("must pass text.", call. = FALSE)
@@ -48,47 +44,51 @@ tippy <- function(text, tooltip, ...,
   
   # forward options using x
   x$opts = list(...)
-  
-  x$tooltip <- tooltip
+  x$opts$content <- tooltip
   
   if(!missing(text))
     x$text <- text
 
   # create widget
-  htmlwidgets::createWidget(
-    name = 'tippy',
-    x,
-    width = width,
-    height = height,
-    package = 'tippy',
-    elementId = elementId
-  )
+  .as_widget(x, elementId) 
 }
 
 #' @rdname tippy
 #' @export
 tippy_this <- function(elementId, tooltip, ...){
-  
+
+  .Deprecated("with_tippy", package = "tippy")
   
   if(missing(tooltip)) stop("must pass tooltip.", call. = FALSE)
   if(missing(elementId)) stop("must pass elementId.", call. = FALSE)
   
-  x = list()
-  x$opts = list(...)
-  
-  x$tooltip <- tooltip
-  
-  if(!missing(elementId))
-    x$element <- elementId
+  x = list(
+    element = elementId,
+    opts = list(
+      content = tooltip,
+      ...
+    )
+  )
   
   # create widget
-  htmlwidgets::createWidget(
-    name = 'tippy',
-    x,
-    width = NULL,
-    height = NULL,
-    package = 'tippy',
-    elementId = NULL
+  .as_widget(x) 
+}
+
+#' @rdname tippy
+#' @export
+with_tippy <- function(element, tooltip, ...){
+  
+  if(missing(tooltip)) stop("must pass tooltip.", call. = FALSE)
+  if(missing(element)) stop("must pass element.", call. = FALSE)
+  
+  x <- list(
+    element = element$attribs$id,
+    opts = list(...)
+  )
+  
+  htmltools::tagList(
+    shiny::tagAppendAttributes(element, "data-tippy" = tooltip),
+    .as_widget(x) 
   )
 }
 

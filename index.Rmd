@@ -29,7 +29,7 @@ div(
       "A",
       tippy(
         "small package",
-        "Just 6 functions!"
+        "Just 4 functions!"
       ),
       "to include tooltips in Shiny apps and",
       tippy(
@@ -52,8 +52,9 @@ install.packages("tippy")
 Or the `r tippy("development", "It's unstable!")` version.
 
 ```{r, eval = FALSE}
-devtools::install_github("JohnCoene/tippy")
-devtools::install_bitbucket("JohnCoene/tippy")
+# install.packages("remotes")
+remotes::install_github("JohnCoene/tippy")
+remotes::install_bitbucket("JohnCoene/tippy")
 ```
 
 `r htmltools::h2(tippy("Examples", "Examples!"))`
@@ -89,43 +90,95 @@ tippy(
 )
 ```
 
-You can also use in in-line, `tippy("like this", "Here's the tooltip")`.
+You can also use in `r tippy("in-line", "like this!")`, `tippy("like this", "Here's the tooltip")`.
 
 ### Shiny
 
-Works in Shiny apps.
+Works in Shiny apps, you can apply the tooltip to another element with `with_tippy`.
 
 ```{r, eval = FALSE}
 library(shiny)
+library(tippy)
 
-ui <- fluidPage(
-  br(), br(), br(),
-  fluidRow(column(12, tippy("Standard tooltip", tooltip = "The tooltip"))),
-  fluidRow(column(12, textInput("textInput", "text"))),
-  tippy_this(element = "textInput", tooltip =  "Tooltip on other element")
+shinyApp(
+  ui = fluidPage(
+    
+    with_tippy(
+      textInput('text', 'Text'),
+      tooltip = "TEXT"
+    ),
+    
+    with_tippy(
+      selectInput('select', 'Select', c('a', 'b')),
+      "SELECT"
+    ),
+    
+    with_tippy(
+      numericInput('numeric', 'Numeric', NULL),
+      "NUMERIC"
+    ),
+    
+    with_tippy(
+      radioButtons('radio', 'Radio', c('a', 'b')),
+      "RADIO"
+    ),
+    
+    with_tippy(
+      checkboxInput('check', 'Check'),
+      "CHECKBOX"
+    ),
+    
+    with_tippy(
+      actionButton('action', 'Action'),
+      "BUTTON"
+    ),
+    
+    with_tippy(
+      sliderInput('slider', 'Slider', 0, 1, 0.5),
+      "SLIDER"
+    ),
+    
+    with_tippy(
+      dateInput('date', 'Date'),
+      "DATE"
+    )
+    
+  ),
+  server = function(input, output) {}
 )
-
-server <- function(input, output){}
-
-shinyApp(ui, server)
 ```
 
-You can also easily call tippy on multiple elements at once.
+You can also `r tippy("easily", "just one function!")` call tippy on `r tippy("multiple elements", "As many as you want!")` at once with `tippy_class`
 
 ```{r, eval=FALSE}
 library(shiny)
 
 shinyApp(
   ui = fluidPage(
-    use_tippy(),
-    p("Some text", title = "tooltip"),
-    p("Some text", title = "tooltip"),
-    p("Some text", title = "tooltip"),
-    p("Some text", title = "tooltip"),
-    p("Some text", title = "tooltip"),
-    p("Some text", title = "tooltip"),
-    call_tippy("[title]") # all elements with title
+    fluidRow(
+      column(
+        3,
+        h3("Same tooltip"),
+        p("Some text", class = "tip"),
+        p("Some text", class = "tip"),
+        p("Some text", class = "tip"),
+        p("Some text", class = "tip"),
+        p("Some text", class = "tip"),
+        p("Some text", class = "tip"),
+        tippy_class("tip", content = "Tooltip")
+      ),
+      column(
+        3, 
+        h3("Different tooltips"),
+        p("Some text", class = "tip2", `data-tippy-content` = "Tooltip 1"),
+        p("Some text", class = "tip2", `data-tippy-content` = "Tooltip 2"),
+        p("Some text", class = "tip2", `data-tippy-content` = "Tooltip 3"),
+        tippy_class("tip2")
+      )
+    )
  ),
- server = function(input, output) {}
+ server = function(input, output, session) {}
 )
 ```
+
+You __must__ pass `session` to your server function for it to work!

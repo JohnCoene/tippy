@@ -1,5 +1,5 @@
 dependencies:
  - name: tippyjs
-   version: 2.5.2
-   src: htmlwidgets/lib/tippyjs-2.5.2
+   version: 3.2.0
+   src: htmlwidgets/lib/tippy
    script: tippy.all.min.js

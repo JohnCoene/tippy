@@ -4,7 +4,7 @@
 
 ![tippy](/man/figures/logo.png)
 
-[Tippy.js](https://atomiks.github.io/tippyjs) R htmlwidget.
+[Tippy.js](https://atomiks.github.io/tippyjs) R htmlwidget: tooltips for R markdown and Shiny.
 
 ## Install
 
@@ -13,8 +13,8 @@
 install.packages("tippy") 
 
 # dev
-devtools::install_github("JohnCoene/tippy")
-devtools::install_bitbucket("JohnCoene/tippy")
+# install.packages("remotes") 
+remotes::install_github("JohnCoene/tippy")
 ```
 
 ### [Documentation](http://tippy.john-coene.com/)

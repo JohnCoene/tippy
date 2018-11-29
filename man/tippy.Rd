@@ -3,24 +3,25 @@
 \name{tippy}
 \alias{tippy}
 \alias{tippy_this}
+\alias{with_tippy}
 \title{Create a tooltip}
 \usage{
-tippy(text, tooltip, ..., width = NULL, height = NULL,
-  elementId = NULL)
+tippy(text, tooltip, ..., elementId = NULL)
 
 tippy_this(elementId, tooltip, ...)
+
+with_tippy(element, tooltip, ...)
 }
 \arguments{
 \item{text}{Element text.}
 
 \item{tooltip}{Element tooltip.}
 
-\item{...}{Any other options from \href{https://github.com/atomiks/tippyjs#options}{the official documentation}.}
-
-\item{height, width}{height and width of sparkline htmlwidget
-specified in any valid \code{CSS} size unit.}
+\item{...}{Any other options from \href{https://atomiks.github.io/tippyjs/#all-options}{the official documentation}.}
 
 \item{elementId}{\code{string} id as a valid \code{CSS} element id.}
+
+\item{element}{An object of class \code{shiny.tag}.}
 }
 \description{
 Add tooltips to your document.
@@ -40,9 +41,7 @@ library(shiny)
 
 shinyApp(
   ui = fluidPage(
-    textInput("input", "input with tooltip"),
-    tippy("Some text", tooltip = "Tiiiip"),
-    tippy_this("input", "Tooltip", placement = "right")
+    with_tippy(textInput("input", "input with tooltip"), "Input text", placement = "right")
  ),
  server = function(input, output) {}
 )

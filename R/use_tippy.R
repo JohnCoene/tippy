@@ -3,7 +3,8 @@
 #' Dynamically use tippy.
 #' 
 #' @param target Target element.
-#' @param ... Any option to pass to tippy
+#' @param class Class of elements to apply tooltip to.
+#' @param ... Any option from \href{https://atomiks.github.io/tippyjs/#all-options}{the official documentation}.
 #' 
 #' @section Functions:
 #' \itemize{
@@ -17,14 +18,13 @@
 #' 
 #' shinyApp(
 #'   ui = fluidPage(
-#'     use_tippy(),
-#'     p("Some text", title = "tooltip"),
-#'     p("Some text", title = "tooltip"),
-#'     p("Some text", title = "tooltip"),
-#'     p("Some text", title = "tooltip"),
-#'     p("Some text", title = "tooltip"),
-#'     p("Some text", title = "tooltip"),
-#'     call_tippy("[title]") # all elements with title
+#'     p("Some text", class = "tooltip"),
+#'     p("Some text", class = "tooltip"),
+#'     p("Some text", class = "tooltip"),
+#'     p("Some text", class = "tooltip"),
+#'     p("Some text", class = "tooltip"),
+#'     p("Some text", class = "tooltip"),
+#'     tippy_class("tooltip", content = "Hi!") # all elements with class
 #'  ),
 #'  server = function(input, output) {}
 #' )
@@ -35,8 +35,10 @@
 #' @rdname use_tippy
 #' @export
 use_tippy <- function(){
+
+  warning("This function is no longer necessary.")
   
-  shiny::addResourcePath("tippy", system.file("htmlwidgets/lib/tippyjs-2.5.2", package = "tippy"))
+  shiny::addResourcePath("tippy", system.file("htmlwidgets/lib/tippy", package = "tippy"))
   
   shiny::tagList(
     shiny::singleton(
@@ -50,6 +52,8 @@ use_tippy <- function(){
 #' @rdname use_tippy
 #' @export
 call_tippy <- function(target, ...){
+
+  .Deprecated("tippy_class", package = "tippy")
   
   if(missing(target))
     stop("must pass target", call. = FALSE)
@@ -64,4 +68,20 @@ call_tippy <- function(target, ...){
   shiny::tagList(
     shiny::tags$script(fn)
   )
+}
+
+#' @rdname use_tippy
+#' @export
+tippy_class <- function(class, ...){
+  
+  if(missing(class))
+    stop("missing class", call. = FALSE)
+  
+  x <- list(
+    class = class,
+    opts = list(...)
+  )
+
+  # create widget
+  .as_widget(x) 
 }

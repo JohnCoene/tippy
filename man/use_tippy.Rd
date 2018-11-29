@@ -3,16 +3,21 @@
 \name{use_tippy}
 \alias{use_tippy}
 \alias{call_tippy}
+\alias{tippy_class}
 \title{Use tippy}
 \usage{
 use_tippy()
 
 call_tippy(target, ...)
+
+tippy_class(class, ...)
 }
 \arguments{
 \item{target}{Target element.}
 
-\item{...}{Any option to pass to tippy}
+\item{...}{Any option from \href{https://atomiks.github.io/tippyjs/#all-options}{the official documentation}.}
+
+\item{class}{Class of elements to apply tooltip to.}
 }
 \description{
 Dynamically use tippy.
@@ -31,14 +36,13 @@ library(shiny)
 
 shinyApp(
   ui = fluidPage(
-    use_tippy(),
-    p("Some text", title = "tooltip"),
-    p("Some text", title = "tooltip"),
-    p("Some text", title = "tooltip"),
-    p("Some text", title = "tooltip"),
-    p("Some text", title = "tooltip"),
-    p("Some text", title = "tooltip"),
-    call_tippy("[title]") # all elements with title
+    p("Some text", class = "tooltip"),
+    p("Some text", class = "tooltip"),
+    p("Some text", class = "tooltip"),
+    p("Some text", class = "tooltip"),
+    p("Some text", class = "tooltip"),
+    p("Some text", class = "tooltip"),
+    tippy_class("tooltip", content = "Hi!") # all elements with class
  ),
  server = function(input, output) {}
 )

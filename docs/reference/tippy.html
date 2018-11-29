@@ -73,7 +73,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">tippy</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.1</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.0</span>
       </span>
     </div>
 
@@ -126,9 +126,11 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>tippy</span>(<span class='no'>text</span>, <span class='no'>tooltip</span>, <span class='no'>...</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>height</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>elementId</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+    <pre class="usage"><span class='fu'>tippy</span>(<span class='no'>text</span>, <span class='no'>tooltip</span>, <span class='no'>...</span>, <span class='kw'>elementId</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
 
-<span class='fu'>tippy_this</span>(<span class='no'>elementId</span>, <span class='no'>tooltip</span>, <span class='no'>...</span>)</pre>
+<span class='fu'>tippy_this</span>(<span class='no'>elementId</span>, <span class='no'>tooltip</span>, <span class='no'>...</span>)
+
+<span class='fu'>with_tippy</span>(<span class='no'>element</span>, <span class='no'>tooltip</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -143,16 +145,15 @@
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Any other options from <a href='https://github.com/atomiks/tippyjs#options'>the official documentation</a>.</p></td>
-    </tr>
-    <tr>
-      <th>height, width</th>
-      <td><p>height and width of sparkline htmlwidget
-specified in any valid <code>CSS</code> size unit.</p></td>
+      <td><p>Any other options from <a href='https://atomiks.github.io/tippyjs/#all-options'>the official documentation</a>.</p></td>
     </tr>
     <tr>
       <th>elementId</th>
       <td><p><code>string</code> id as a valid <code>CSS</code> element id.</p></td>
+    </tr>
+    <tr>
+      <th>element</th>
+      <td><p>An object of class <code>shiny.tag</code>.</p></td>
     </tr>
     </table>
     
@@ -176,9 +177,7 @@ specified in any valid <code>CSS</code> size unit.</p></td>
 
 <span class='fu'><a href='http://www.rdocumentation.org/packages/shiny/topics/shinyApp'>shinyApp</a></span>(
   <span class='kw'>ui</span> <span class='kw'>=</span> <span class='fu'><a href='http://www.rdocumentation.org/packages/shiny/topics/fluidPage'>fluidPage</a></span>(
-    <span class='fu'><a href='http://www.rdocumentation.org/packages/shiny/topics/textInput'>textInput</a></span>(<span class='st'>"input"</span>, <span class='st'>"input with tooltip"</span>),
-    <span class='fu'>tippy</span>(<span class='st'>"Some text"</span>, <span class='kw'>tooltip</span> <span class='kw'>=</span> <span class='st'>"Tiiiip"</span>),
-    <span class='fu'>tippy_this</span>(<span class='st'>"input"</span>, <span class='st'>"Tooltip"</span>, <span class='kw'>placement</span> <span class='kw'>=</span> <span class='st'>"right"</span>)
+    <span class='fu'>with_tippy</span>(<span class='fu'><a href='http://www.rdocumentation.org/packages/shiny/topics/textInput'>textInput</a></span>(<span class='st'>"input"</span>, <span class='st'>"input with tooltip"</span>), <span class='st'>"Input text"</span>, <span class='kw'>placement</span> <span class='kw'>=</span> <span class='st'>"right"</span>)
  ),
  <span class='kw'>server</span> <span class='kw'>=</span> <span class='kw'>function</span>(<span class='no'>input</span>, <span class='no'>output</span>) {}
 )
