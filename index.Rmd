@@ -77,10 +77,12 @@ tippy(
 )
 
 tippy("<strong>Works with html!</strong>", 
-  tooltip = "Hi, I'm the tooltip!", 
+  tooltip = "<strong>Hi</strong>, I'm the tooltip!", 
+  allowHTML = TRUE,
   animation = "scale",
   duration = 1000, 
-  placement = "bottom"
+  placement = "bottom",
+  theme = "light"
 )
 
 tippy(
