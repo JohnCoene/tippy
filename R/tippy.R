@@ -56,8 +56,6 @@ tippy <- function(text, tooltip, ..., elementId = NULL) {
 #' @rdname tippy
 #' @export
 tippy_this <- function(elementId, tooltip, ...){
-
-  .Deprecated("with_tippy", package = "tippy")
   
   if(missing(tooltip)) stop("must pass tooltip.", call. = FALSE)
   if(missing(elementId)) stop("must pass elementId.", call. = FALSE)
