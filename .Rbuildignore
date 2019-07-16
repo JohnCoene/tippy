@@ -1,0 +1,5 @@
+.travis.yml
+_pkgdown.yml
+cran-comments.md
+docs
+index.rmd
