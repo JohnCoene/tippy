@@ -33,7 +33,7 @@
 #'
 #' @import htmlwidgets
 #' 
-#' @rdname tippy
+#' @name tippy_funcs
 #' @export
 tippy <- function(text, tooltip, ..., elementId = NULL) {
 
@@ -53,7 +53,7 @@ tippy <- function(text, tooltip, ..., elementId = NULL) {
   .as_widget(x, elementId) 
 }
 
-#' @rdname tippy
+#' @rdname tippy_funcs
 #' @export
 tippy_this <- function(elementId, tooltip, ...){
   
@@ -72,7 +72,7 @@ tippy_this <- function(elementId, tooltip, ...){
   .as_widget(x) 
 }
 
-#' @rdname tippy
+#' @rdname tippy_funcs
 #' @export
 with_tippy <- function(element, tooltip, ...){
   

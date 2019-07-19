@@ -32,7 +32,7 @@
 #' 
 #' @seealso \href{https://atomiks.github.io/tippyjs/}{official documentation}
 #' 
-#' @rdname use_tippy
+#' @name use_tippy_funcs
 #' @export
 use_tippy <- function(){
 
@@ -49,7 +49,7 @@ use_tippy <- function(){
   )
 }
 
-#' @rdname use_tippy
+#' @rdname use_tippy_funcs
 #' @export
 call_tippy <- function(target, ...){
 
@@ -70,7 +70,7 @@ call_tippy <- function(target, ...){
   )
 }
 
-#' @rdname use_tippy
+#' @rdname use_tippy_funcs
 #' @export
 tippy_class <- function(class, ...){
   
