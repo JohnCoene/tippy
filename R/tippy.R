@@ -44,10 +44,10 @@ tippy <- function(text, tooltip, ..., elementId = NULL) {
   
   # forward options using x
   x$opts = list(...)
-  x$opts$content <- tooltip
+  x$opts$content <- as.character(tooltip)
   
   if(!missing(text))
-    x$text <- text
+    x$text <- as.character(text)
 
   # create widget
   .as_widget(x, elementId) 
