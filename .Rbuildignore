@@ -4,3 +4,4 @@ cran-comments.md
 docs
 index.rmd
 test.R
+^cran-comments\.md$

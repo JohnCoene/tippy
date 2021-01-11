@@ -4,7 +4,7 @@
 
 ![tippy](/man/figures/logo.png)
 
-[Tippy.js](https://atomiks.github.io/tippyjs) R htmlwidget: tooltips for R markdown and Shiny.
+[Tippy.js](https://github.com/atomiks/tippyjs) R htmlwidget: tooltips for R markdown and Shiny.
 
 ## Install
 
