@@ -5,3 +5,4 @@ docs
 index.rmd
 test.R
 ^cran-comments\.md$
+^CRAN-RELEASE$
