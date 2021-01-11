@@ -8,6 +8,6 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: htmlwidgets, htmltools, shiny, jsonlite
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.1
 URL: http://tippy.john-coene.com/
 BugReports: https://github.com/JohnCoene/tippy/issues
