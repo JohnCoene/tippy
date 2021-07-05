@@ -11,6 +11,8 @@ navbar:
       href: index.html
     - text: "Reference"
       href: "reference/"
+    - text: Examples
+      href: articles/examples.html
   right:
     - icon: fa-github fa-lg
       href: https://github.com/JohnCoene/tippy

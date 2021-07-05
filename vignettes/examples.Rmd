@@ -1,0 +1,97 @@
+---
+title: "examples"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{examples}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+
+library(tippy)
+```
+
+Works in Shiny apps, you can apply the tooltip to another element with `withTippy`.
+
+```r
+library(shiny)
+library(tippy)
+
+shinyApp(
+  ui = fluidPage(
+    withTippy(
+      textInput('text', 'Text'),
+      content = "TEXT"
+    ),
+    withTippy(
+      selectInput('select', 'Select', c('a', 'b')),
+      "SELECT"
+    ),
+    withTippy(
+      numericInput('numeric', 'Numeric', NULL),
+      "NUMERIC"
+    ),
+    withTippy(
+      radioButtons('radio', 'Radio', c('a', 'b')),
+      "RADIO"
+    ),
+    withTippy(
+      checkboxInput('check', 'Check'),
+      "CHECKBOX"
+    ),
+    withTippy(
+      actionButton('action', 'Action'),
+      "BUTTON"
+    ),
+    
+    with_tippy(
+      sliderInput('slider', 'Slider', 0, 1, 0.5),
+      "SLIDER"
+    ),
+    withTippy(
+      dateInput('date', 'Date'),
+      "DATE"
+    )
+    
+  ),
+  server = function(input, output) {}
+)
+```
+
+You can also `r tippy("easily", "just one function!")` call tippy on `r tippy("multiple elements", "As many as you want!")` at once with `tippy_class`
+
+```r
+library(shiny)
+
+shinyApp(
+  ui = fluidPage(
+    fluidRow(
+      column(
+        3,
+        h3("Same tooltip"),
+        p("Some text", class = "tip"),
+        p("Some text", class = "tip"),
+        p("Some text", class = "tip"),
+        p("Some text", class = "tip"),
+        p("Some text", class = "tip"),
+        p("Some text", class = "tip"),
+        tippyTheme(".tip", content = "Tooltip")
+      ),
+      column(
+        3, 
+        h3("Different tooltips"),
+        p("Some text", class = "tip2", `data-tippy-content` = "Tooltip 1"),
+        p("Some text", class = "tip2", `data-tippy-content` = "Tooltip 2"),
+        p("Some text", class = "tip2", `data-tippy-content` = "Tooltip 3"),
+        tippyThis(".tip2")
+      )
+    )
+ ),
+ server = function(input, output, session) {}
+)
+```

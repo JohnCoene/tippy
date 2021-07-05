@@ -1,123 +1,103 @@
-#' Create a tooltip
+#' Add a Tooltip to an Element
 #'
-#' Add tooltips to your document.
+#' Add tooltips to an element.
 #'
-#' @param text Element text.
-#' @param tooltip Element tooltip.
-#' @param element An object of class \code{shiny.tag}.
-#' @param elementId \code{string} id as a valid \code{CSS} element id.
-#' @param ... Any other options from \href{https://atomiks.github.io/tippyjs/#all-options}{the official documentation}.
+#' @param element Shiny, or htmltools element, or character string.
+#' @param content Content of the tooltip.
+#' @param ... Any other options from \href{https://atomiks.github.io/tippyjs/v6/all-props/}{the official documentation}.
 #'
 #' @examples
-#' tippy("Hover me!", tooltip = "Hi, I'm the tooltip!")
-#' tippy("Hover me!", tooltip = "Hi, I'm the tooltip!", placement = "right",
-#'   theme = "light")
-#' tippy("Hover me!", tooltip = "Hi, I'm the tooltip!", animation = "scale",
-#'   duration = 1000, placement = "bottom")
-#' tippy("Click me!", tooltip = "Hi, I'm the tooltip!", trigger = "click",
-#'   theme = "light")
-#' 
-#' # use tooltip on other elements.
-#' if(interactive()){
 #' library(shiny)
 #' 
-#' shinyApp(
-#'   ui = fluidPage(
-#'     with_tippy(textInput("input", "input with tooltip"), "Input text", placement = "right")
-#'  ),
-#'  server = function(input, output) {}
-#' )
-#' }
+#' tippy("Hover me!", content = "Hi, I'm the tooltip!")
+#' tippy(h3("Hello"), content = "World")
 #' 
 #' @seealso \href{https://atomiks.github.io/tippyjs/}{official documentation}
 #'
-#' @import htmlwidgets
+#' @importFrom htmltools span browsable tagAppendAttributes HTML
+#' @importFrom htmltools tagList html_print
+#' @importFrom jsonlite toJSON
 #' 
-#' @name tippy_funcs
+#' @name tippy
 #' @export
-tippy <- function(text, tooltip, ..., elementId = NULL) {
+tippy <- function(element, content, ...) {
 
-  if(missing(tooltip)) stop("must pass tooltip.", call. = FALSE)
-  if(missing(text)) stop("must pass text.", call. = FALSE)
-
-  x <- list()
+  if(missing(content)) 
+    stop("Must pass content", call. = FALSE)
   
-  # forward options using x
-  x$opts = list(...)
-  x$opts$content <- as.character(tooltip)
+  if(missing(element)) 
+    stop("Must pass element", call. = FALSE)
   
-  if(!missing(text))
-    x$text <- as.character(text)
+  if(inherits(element, "shiny.tag.list"))
+    stop("Cannot assign tooltip to `tagList`", call. = FALSE)
 
-  # create widget
-  .as_widget(x, elementId) 
+  if(!inherits(element, "shiny.tag"))
+    element <- span(element[1], id = random_id())
+
+  id <- element$attribs$id
+
+  if(is.null(id)){
+    id <- random_id()
+    element <- tagAppendAttributes(element, id = id)
+  }
+
+  script <- .tippy_this(id, content = content, ...) 
+
+  el <- tagList(
+    useTippy(),
+    element,
+    script
+  )
+
+  structure(el, class = c("tippy", class(el)))
 }
 
-#' @rdname tippy_funcs
+#' @export 
+print.tippy <- function(x, ...){
+  html_print(x)
+  invisible(x)
+}
+
+#' Bind Tooltip to a Selector
+#' 
+#' Binds a tooltip to a valid CSS selector.
+#' 
+#' @inheritParams tippy
+#' @param selector A CSS selector, e.g.: `#id` or
+#' `.class`. If it is a bare selector (e.g.: `sth`)
+#' then it is assumed to be an id and processed as
+#' `#sth`. Set `.is_tag` to `TRUE` to disable that.
+#' @param .is_tag Whether the selector is a tag,
+#' e.g.: `<p>`.
+#' 
+#' @examples 
+#' library(shiny)
+#' 
+#' ui <- fluidPage(
+#'  tippy(h3("Hello"), "World"),
+#'  h4("World", id = "theId"),
+#'  tippyThis("theId", "A tooltip")
+#' )
+#' 
+#' server <- function(input, output) {}
+#' 
+#' if(interactive())
+#'  shinyApp(ui, server)
+#' 
+#' @name tippyThis
 #' @export
-tippy_this <- function(elementId, tooltip, ...){
+tippyThis <- function(selector, content = NULL, ..., .is_tag = FALSE){
   
-  if(missing(tooltip)) stop("must pass tooltip.", call. = FALSE)
-  if(missing(elementId)) stop("must pass elementId.", call. = FALSE)
+  if(missing(selector)) 
+    stop("must pass selector", call. = FALSE)
   
-  x = list(
-    element = elementId,
-    opts = list(
-      content = tooltip,
-      ...
+  tagList(
+    useTippy(),
+    .tippy_this(
+      selector = selector, 
+      content = content, 
+      ...,
+      .is_tag = .is_tag
     )
   )
-  
-  # create widget
-  .as_widget(x) 
-}
-
-#' @rdname tippy_funcs
-#' @export
-with_tippy <- function(element, tooltip, ...){
-  
-  if(missing(tooltip)) stop("must pass tooltip.", call. = FALSE)
-  if(missing(element)) stop("must pass element.", call. = FALSE)
-  
-  x <- list(
-    element = element$attribs$id,
-    opts = list(...)
-  )
-  
-  htmltools::tagList(
-    shiny::tagAppendAttributes(element, "data-tippy" = tooltip),
-    .as_widget(x) 
-  )
-}
-
-tippy_html <- function(id, style, class, ...){
-  htmltools::tags$span(id = id, class = class, ...)
-}
-
-#' Shiny bindings for tippy
-#'
-#' Output and render functions for using tippy within Shiny
-#' applications and interactive Rmd documents.
-#'
-#' @param outputId output variable to read from
-#' @param width,height Must be a valid CSS unit (like \code{'100\%'},
-#'   \code{'400px'}, \code{'auto'}) or a number, which will be coerced to a
-#'   string and have \code{'px'} appended.
-#' @param expr An expression that generates a tippy
-#' @param env The environment in which to evaluate \code{expr}.
-#' @param quoted Is \code{expr} a quoted expression (with \code{quote()})? This
-#'   is useful if you want to save an expression in a variable.
-#'
-#' @name tippy-shiny
-#'
-#' @export
-tippyOutput <- function(outputId, width = '100%', height = '400px'){
-  htmlwidgets::shinyWidgetOutput(outputId, 'tippy', width, height, package = 'tippy')
-}
-
-#' @rdname tippy-shiny
-#' @export
-renderTippy <- function(expr, env = parent.frame(), quoted = FALSE) {
-  if (!quoted) { expr <- substitute(expr) } # force quoted
-  htmlwidgets::shinyRenderWidget(expr, tippyOutput, env, quoted = TRUE)
 }

@@ -1,6 +1,6 @@
 Package: tippy
 Title: Add Tooltips to 'R markdown' Documents or 'Shiny' Apps
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: person("John", "Coene", email = "jcoenep@gmail.com", role = c("aut", "cre"))
 Description: 'Htmlwidget' of 'Tippyjs' to add tooltips to 'Shiny' apps and 'R markdown' documents.
 Depends: R (>= 3.4.0)
@@ -11,3 +11,7 @@ Imports: htmlwidgets, htmltools, shiny, jsonlite
 RoxygenNote: 7.1.1
 URL: https://tippy.john-coene.com/
 BugReports: https://github.com/JohnCoene/tippy/issues
+Suggests: 
+    rmarkdown,
+    knitr
+VignetteBuilder: knitr

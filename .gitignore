@@ -3,3 +3,5 @@
 .RData
 tippy.Rproj
 test.R
+node_modules
+inst/doc
