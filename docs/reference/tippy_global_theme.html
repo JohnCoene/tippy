@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Changelog • tippy</title>
+<title>Theme — tippy_global_theme • tippy</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +46,9 @@
 
 
 
-<meta property="og:title" content="Changelog" />
+<meta property="og:title" content="Theme — tippy_global_theme" />
+<meta property="og:description" content="Set a global theme. 
+Every tooltip will subsequently use this theme." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -76,7 +78,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-news">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
@@ -134,42 +136,34 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1 data-toc-skip>Changelog <small></small></h1>
-      <small>Source: <a href='https://github.com/JohnCoene/tippy/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
+    <h1>Theme</h1>
+    <small class="dont-index">Source: <a href='https://github.com/JohnCoene/tippy/blob/master/R/theme.R'><code>R/theme.R</code></a></small>
+    <div class="hidden name"><code>tippy_global_theme.Rd</code></div>
     </div>
 
-    <div id="tippy-100" class="section level2">
-<h2 class="hasAnchor">
-<a href="#tippy-100" class="anchor"></a>tippy 1.0.0</h2>
-<ul>
-<li>Remove deprecated <code>call_tippy</code>
-</li>
-<li>Use packer for JavaScript</li>
-<li>Deprecate <code>tippy_class</code>, <code>with_tippy</code> in favour of <code>tippy_this</code> and <code>tippy</code> respectively.</li>
-<li>Removed <code>renderTippy</code> and <code>tippyOutput</code> functions, these were part of the htmlwidget which is useless.</li>
-<li>Initial <code>tippy_plot</code> to use plots in tooltips.</li>
-<li>Support new themes.</li>
-<li>Allow calling methods on tooltips (e.g.: disable, show, hide, etc.)</li>
-<li>Allow setting global theme, see <a href="https://github.com/JohnCoene/tippy/issues/3"><a href='https://github.com/JohnCoene/tippy/issues/3'>#3</a></a>
-</li>
-</ul>
-</div>
-    <div id="tippy-010" class="section level2">
-<h2 class="hasAnchor">
-<a href="#tippy-010" class="anchor"></a>tippy 0.1.0</h2>
-<p>Updated to tippy 3.2.0</p>
-<ul>
-<li>Deprecated <code>tippy_this</code> in favour of <code>with_tippy</code>.</li>
-</ul>
-</div>
-  </div>
+    <div class="ref-description">
+    <p>Set a global theme. 
+Every tooltip will subsequently use this theme.</p>
+    </div>
 
+    <pre class="usage"><span class='fu'>tippy_global_theme</span><span class='op'>(</span><span class='va'>name</span><span class='op'>)</span></pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>name</th>
+      <td><p>Name of the theme to set.</p></td>
+    </tr>
+    </table>
+
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
     </nav>
   </div>
-
 </div>
 
 

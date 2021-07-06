@@ -49,9 +49,14 @@ make_selectors <- function(selectors, .is_tag){
 #' Tippy an element from its selector
 #' @keywords internal
 .tippy_this <- function(selector, ..., .is_tag = FALSE){
+  opts <- list(...)
+  
+  if(is.null(opts$theme))
+    opts$theme <- get_theme()
+
   opts <- list(
     selector = make_selector(selector, .is_tag), 
-    options = dropNulls(list(...))
+    options = dropNulls(opts)
   )
   opts <- toJSON(opts, auto_unbox = TRUE)
   opts <- as.character(opts)

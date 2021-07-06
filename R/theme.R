@@ -78,3 +78,22 @@ tippyTheme <- function(
 		)
 	)
 }
+
+#' Theme
+#' 
+#' Set a global theme. 
+#' Every tooltip will subsequently use this theme. 
+#' 
+#' @param name Name of the theme to set.
+#' 
+#' @export 
+tippy_global_theme <- function(name){
+	if(missing(name))
+		stop("Missing name", call. = FALSE)
+	
+	options(TIPPY_THEME = name)
+}
+
+get_theme <- function(){
+	getOption("TIPPY_THEME", NULL)
+}

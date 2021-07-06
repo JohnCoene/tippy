@@ -164,6 +164,7 @@ tippy_hide <- function(
   send_method(selectors, "hide", .session = .session)
 }
 
+# Send data to method
 send_method <- function(selectors, method, ..., .session){
   .session$sendCustomMessage(
     "tippy-method",
