@@ -86,7 +86,7 @@
 
       
 
-      </header><script src="examples_files/tippy-0.2.0/tippy.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>examples</h1>
@@ -99,9 +99,6 @@
 
     
     
-<div id="shiny" class="section level2">
-<h2 class="hasAnchor">
-<a href="#shiny" class="anchor"></a>Shiny</h2>
 <p>Works in Shiny apps, you can apply the tooltip to another element with <code>withTippy</code>.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.rstudio.com/">shiny</a></span><span class="op">)</span>
@@ -134,7 +131,7 @@
       <span class="st">"BUTTON"</span>
     <span class="op">)</span>,
     
-    <span class="fu"><a href="../reference/with_tippy.html">with_tippy</a></span><span class="op">(</span>
+    <span class="fu"><a href="../reference/deprecated.html">with_tippy</a></span><span class="op">(</span>
       <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/sliderInput.html">sliderInput</a></span><span class="op">(</span><span class="st">'slider'</span>, <span class="st">'Slider'</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0.5</span><span class="op">)</span>,
       <span class="st">"SLIDER"</span>
     <span class="op">)</span>,
@@ -146,11 +143,7 @@
   <span class="op">)</span>,
   server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span>
 <span class="op">)</span></code></pre></div>
-<p>You can also</p>
-<span id="tippy-xy13lrh9apq687kcvs4z">easily</span>
-<script>tippyr.callTippy({"selector":"#tippy-xy13lrh9apq687kcvs4z","options":{"content":"just one function!"}});</script><p>call tippy on</p>
-<span id="tippy-ie3hxkcao728pnb15fwm">multiple elements</span>
-<script>tippyr.callTippy({"selector":"#tippy-ie3hxkcao728pnb15fwm","options":{"content":"As many as you want!"}});</script><p>at once with <code>tippy_class</code></p>
+<p>You can also easily call tippy on multiple elements and create themes with <code>tippyTheme</code>.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.rstudio.com/">shiny</a></span><span class="op">)</span>
 
@@ -180,14 +173,11 @@
  <span class="op">)</span>,
  server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span>
 <span class="op">)</span></code></pre></div>
-</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
-    </nav>
-</div>
+      </div>
 
 </div>
 

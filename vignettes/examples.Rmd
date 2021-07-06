@@ -63,7 +63,8 @@ shinyApp(
 )
 ```
 
-You can also `r tippy("easily", "just one function!")` call tippy on `r tippy("multiple elements", "As many as you want!")` at once with `tippy_class`
+You can also easily call tippy on multiple elements and
+create themes with `tippyTheme`.
 
 ```r
 library(shiny)

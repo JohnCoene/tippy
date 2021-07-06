@@ -92,15 +92,18 @@
 
 <p><img src="logo.png"></p>
 <p>Include tooltips in Rmarkdown documents and Shiny applications.</p>
+<p>⚠️ The API is in flux, the <code>dev</code> version is likely to change a lot and break things.</p>
 <div id="install" class="section level2">
 <h2 class="hasAnchor">
 <a href="#install" class="anchor"></a>Install</h2>
 <p>CRAN release.</p>
-<pre><code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages("tippy") </a></code></pre>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"tippy"</span><span class="op">)</span> </code></pre></div>
 <p>Development version from GitHub.</p>
-<pre><code><a href="https://remotes.r-lib.org/reference/install_github.html"># install.packages("remotes")
-remotes::install_github("JohnCoene/tippy")
-remotes::install_bitbucket("JohnCoene/tippy")</a></code></pre>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># install.packages("remotes")</span>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"JohnCoene/tippy"</span><span class="op">)</span>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_bitbucket.html">install_bitbucket</a></span><span class="op">(</span><span class="st">"JohnCoene/tippy"</span><span class="op">)</span></code></pre></div>
 </div>
 
   </div>

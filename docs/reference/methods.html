@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • tippy</title>
+<title>Methods — methods • tippy</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +46,8 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Methods — methods" />
+<meta property="og:description" content="Call tippy methods on tooltips." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -76,7 +77,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
@@ -132,78 +133,69 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Methods</h1>
+    <small class="dont-index">Source: <a href='https://github.com/JohnCoene/tippy/blob/master/R/tippy.R'><code>R/tippy.R</code></a></small>
+    <div class="hidden name"><code>methods.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Call tippy methods on tooltips.</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>tippy_disable</span><span class='op'>(</span>
+  selectors <span class='op'>=</span> <span class='cn'>NULL</span>,
+  .session <span class='op'>=</span> <span class='fu'>shiny</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/shiny/man/domains.html'>getDefaultReactiveDomain</a></span><span class='op'>(</span><span class='op'>)</span>,
+  .is_tag <span class='op'>=</span> <span class='cn'>FALSE</span>
+<span class='op'>)</span>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="deprecated.html">use_tippy()</a></code> <code><a href="deprecated.html">tippy_class()</a></code> <code><a href="deprecated.html">with_tippy()</a></code> </p>
-        </td>
-        <td><p>Use tippy</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="methods.html">tippy_disable()</a></code> <code><a href="methods.html">tippy_enable()</a></code> <code><a href="methods.html">tippy_destroy()</a></code> <code><a href="methods.html">tippy_show()</a></code> <code><a href="methods.html">tippy_hide()</a></code> </p>
-        </td>
-        <td><p>Methods</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="tippy.html">tippy()</a></code> </p>
-        </td>
-        <td><p>Add a Tooltip to an Element</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="tippyTheme.html">tippyTheme()</a></code> </p>
-        </td>
-        <td><p>Theme</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="tippyThis.html">tippy_this()</a></code> <code><a href="tippyThis.html">tippyThis()</a></code> </p>
-        </td>
-        <td><p>Bind Tooltip to a Selector</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="tippy_plot.html">tippy_plot()</a></code> </p>
-        </td>
-        <td><p>Use a plot as tooltip</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="useTippy.html">useTippy()</a></code> </p>
-        </td>
-        <td><p>Dependencies</p></td>
-      </tr>
-    </tbody>
+<span class='fu'>tippy_enable</span><span class='op'>(</span>
+  selectors <span class='op'>=</span> <span class='cn'>NULL</span>,
+  .session <span class='op'>=</span> <span class='fu'>shiny</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/shiny/man/domains.html'>getDefaultReactiveDomain</a></span><span class='op'>(</span><span class='op'>)</span>,
+  .is_tag <span class='op'>=</span> <span class='cn'>FALSE</span>
+<span class='op'>)</span>
+
+<span class='fu'>tippy_destroy</span><span class='op'>(</span>
+  selectors <span class='op'>=</span> <span class='cn'>NULL</span>,
+  .session <span class='op'>=</span> <span class='fu'>shiny</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/shiny/man/domains.html'>getDefaultReactiveDomain</a></span><span class='op'>(</span><span class='op'>)</span>,
+  .is_tag <span class='op'>=</span> <span class='cn'>FALSE</span>
+<span class='op'>)</span>
+
+<span class='fu'>tippy_show</span><span class='op'>(</span>
+  selectors <span class='op'>=</span> <span class='cn'>NULL</span>,
+  .session <span class='op'>=</span> <span class='fu'>shiny</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/shiny/man/domains.html'>getDefaultReactiveDomain</a></span><span class='op'>(</span><span class='op'>)</span>,
+  .is_tag <span class='op'>=</span> <span class='cn'>FALSE</span>
+<span class='op'>)</span>
+
+<span class='fu'>tippy_hide</span><span class='op'>(</span>
+  selectors <span class='op'>=</span> <span class='cn'>NULL</span>,
+  .session <span class='op'>=</span> <span class='fu'>shiny</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/shiny/man/domains.html'>getDefaultReactiveDomain</a></span><span class='op'>(</span><span class='op'>)</span>,
+  .is_tag <span class='op'>=</span> <span class='cn'>FALSE</span>
+<span class='op'>)</span></pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>selectors</th>
+      <td><p>Selectors of tooltips to
+apply the method. If `NULL` then the method
+is applied to _all tooltips._</p></td>
+    </tr>
+    <tr>
+      <th>.session</th>
+      <td><p>A valid shiny session.</p></td>
+    </tr>
+    <tr>
+      <th>.is_tag</th>
+      <td><p>Whether `selectors` are tags,
+e.g.: `&lt;p&gt;`.</p></td>
+    </tr>
     </table>
-  </div>
 
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>

@@ -6,6 +6,7 @@
 `tippy_this` and `tippy` respectively.
 - Removed `renderTippy` and `tippyOutput` functions, 
 these were part of the htmlwidget which is useless.
+- Initial `tippy_plot` to use plots in tooltips.
 
 ## tippy 0.1.0
 

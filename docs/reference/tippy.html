@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Add a Tooltip to an Element — with_tippy • tippy</title>
+<title>Add a Tooltip to an Element — tippy • tippy</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +46,7 @@
 
 
 
-<meta property="og:title" content="Add a Tooltip to an Element — with_tippy" />
+<meta property="og:title" content="Add a Tooltip to an Element — tippy" />
 <meta property="og:description" content="Add tooltips to an element." />
 <meta property="og:image" content="/logo.png" />
 
@@ -136,7 +136,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Add a Tooltip to an Element</h1>
-    <small class="dont-index">Source: <a href='https://github.com/JohnCoene/tippy/blob/master/R/deprecated.R'><code>R/deprecated.R</code></a>, <a href='https://github.com/JohnCoene/tippy/blob/master/R/tippy.R'><code>R/tippy.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/JohnCoene/tippy/blob/master/R/tippy.R'><code>R/tippy.R</code></a></small>
     <div class="hidden name"><code>tippy.Rd</code></div>
     </div>
 
@@ -144,9 +144,7 @@
     <p>Add tooltips to an element.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>with_tippy</span><span class='op'>(</span><span class='va'>element</span>, <span class='va'>tooltip</span>, <span class='va'>...</span><span class='op'>)</span>
-
-<span class='fu'>tippy</span><span class='op'>(</span><span class='va'>element</span>, <span class='va'>content</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>tippy</span><span class='op'>(</span><span class='va'>element</span>, <span class='va'>content</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -156,12 +154,12 @@
       <td><p>Shiny, or htmltools element, or character string.</p></td>
     </tr>
     <tr>
-      <th>...</th>
-      <td><p>Any other options from <a href='https://atomiks.github.io/tippyjs/v6/all-props/'>the official documentation</a>.</p></td>
-    </tr>
-    <tr>
       <th>content</th>
       <td><p>Content of the tooltip.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Any other options from <a href='https://atomiks.github.io/tippyjs/v6/all-props/'>the official documentation</a>.</p></td>
     </tr>
     </table>
 
@@ -173,22 +171,8 @@
     <pre class="examples"><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://shiny.rstudio.com/'>shiny</a></span><span class='op'>)</span>
 
 <span class='fu'>tippy</span><span class='op'>(</span><span class='st'>"Hover me!"</span>, content <span class='op'>=</span> <span class='st'>"Hi, I'm the tooltip!"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $selector
-#&gt; [1] "#tippy-wl5dfie3xomb9kv2817z"
-#&gt; 
-#&gt; $options
-#&gt; $options$content
-#&gt; [1] "Hi, I'm the tooltip!"
-#&gt; 
-#&gt; </div><div class='input'><span class='fu'>tippy</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>h3</a></span><span class='op'>(</span><span class='st'>"Hello"</span><span class='op'>)</span>, content <span class='op'>=</span> <span class='st'>"World"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $selector
-#&gt; [1] "#tippy-d8yvkgufi6j3bqta2wnx"
-#&gt; 
-#&gt; $options
-#&gt; $options$content
-#&gt; [1] "World"
-#&gt; 
-#&gt; </div><div class='input'>
+<span class='fu'>tippy</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>h3</a></span><span class='op'>(</span><span class='st'>"Hello"</span><span class='op'>)</span>, content <span class='op'>=</span> <span class='st'>"World"</span><span class='op'>)</span>
+
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

@@ -3,6 +3,7 @@ import tippy from 'tippy.js';
 import 'tippy.js/themes/light.css';
 
 import { callTippy } from './bind';
+import { plot } from './plot';
 
 const theme = (opts) => {
 	tippy.setDefaultProps(opts);
@@ -97,4 +98,12 @@ Shiny.addCustomMessageHandler('tippy-method', function(msg){
 	}
 });
 
-export { callTippy, theme }
+Shiny.addCustomMessageHandler('tippy-plot', function(msg){
+	if(msg.hide){
+		$(msg.target).hide();
+	}
+
+	plot(msg);
+});
+
+export { callTippy, theme, plot}

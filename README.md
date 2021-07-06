@@ -6,6 +6,9 @@
 
 [Tippy.js](https://github.com/atomiks/tippyjs) R htmlwidget: tooltips for R markdown and Shiny.
 
+:warning: The API is in flux, the `dev` version is likely to 
+change a lot and break things.
+
 ## Install
 
 ```r
