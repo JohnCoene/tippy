@@ -1,4 +1,4 @@
-## tippy 0.2.0
+## tippy 1.0.0
 
 - Remove deprecated `call_tippy`
 - Use packer for JavaScript
@@ -7,6 +7,7 @@
 - Removed `renderTippy` and `tippyOutput` functions, 
 these were part of the htmlwidget which is useless.
 - Initial `tippy_plot` to use plots in tooltips.
+- Support new themes.
 
 ## tippy 0.1.0
 

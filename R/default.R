@@ -1,6 +1,7 @@
-#' Theme
+#' Default
 #' 
-#' Set tippy theme.
+#' Set tippy defaults that will be shared
+#' by all other tooltips.
 #' 
 #' @inheritParams tippy
 #' 
@@ -8,10 +9,10 @@
 #' @importFrom jsonlite toJSON
 #' 
 #' @export 
-tippyTheme <- function(...){
+tippyDefault <- function(...){
 	opts <- toJSON(list(...), auto_unbox = TRUE)
 	script <- HTML(
-		sprintf("tippyr.theme(%s);", opts)
+		sprintf("tippyr.defaultProps(%s);", opts)
 	)
 	singleton(
 		tags$head(

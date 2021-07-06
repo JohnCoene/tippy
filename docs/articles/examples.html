@@ -44,7 +44,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">tippy</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
       </span>
     </div>
 
@@ -99,6 +99,9 @@
 
     
     
+<div id="basic" class="section level2">
+<h2 class="hasAnchor">
+<a href="#basic" class="anchor"></a>Basic</h2>
 <p>Works in Shiny apps, you can apply the tooltip to another element with <code>withTippy</code>.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.rstudio.com/">shiny</a></span><span class="op">)</span>
@@ -106,44 +109,55 @@
 
 <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html">shinyApp</a></span><span class="op">(</span>
   ui <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidPage</a></span><span class="op">(</span>
-    <span class="fu">withTippy</span><span class="op">(</span>
-      <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/textInput.html">textInput</a></span><span class="op">(</span><span class="st">'text'</span>, <span class="st">'Text'</span><span class="op">)</span>,
+    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/textInput.html">textInput</a></span><span class="op">(</span><span class="st">'text'</span>, <span class="st">'Text'</span><span class="op">)</span>,
+    <span class="fu"><a href="../reference/tippy_this.html">tippyThis</a></span><span class="op">(</span>
+      id <span class="op">=</span> <span class="st">"text"</span>,
       content <span class="op">=</span> <span class="st">"TEXT"</span>
     <span class="op">)</span>,
-    <span class="fu">withTippy</span><span class="op">(</span>
-      <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/selectInput.html">selectInput</a></span><span class="op">(</span><span class="st">'select'</span>, <span class="st">'Select'</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'a'</span>, <span class="st">'b'</span><span class="op">)</span><span class="op">)</span>,
+    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/selectInput.html">selectInput</a></span><span class="op">(</span><span class="st">'select'</span>, <span class="st">'Select'</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'a'</span>, <span class="st">'b'</span><span class="op">)</span><span class="op">)</span>,
+    <span class="fu"><a href="../reference/tippy_this.html">tippyThis</a></span><span class="op">(</span>
+      <span class="st">"select"</span>,
       <span class="st">"SELECT"</span>
     <span class="op">)</span>,
-    <span class="fu">withTippy</span><span class="op">(</span>
-      <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/numericInput.html">numericInput</a></span><span class="op">(</span><span class="st">'numeric'</span>, <span class="st">'Numeric'</span>, <span class="cn">NULL</span><span class="op">)</span>,
+    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/numericInput.html">numericInput</a></span><span class="op">(</span><span class="st">'numeric'</span>, <span class="st">'Numeric'</span>, <span class="cn">NULL</span><span class="op">)</span>,
+    <span class="fu"><a href="../reference/tippy_this.html">tippyThis</a></span><span class="op">(</span>
+      <span class="st">"Numeric"</span>,
       <span class="st">"NUMERIC"</span>
     <span class="op">)</span>,
-    <span class="fu">withTippy</span><span class="op">(</span>
-      <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/radioButtons.html">radioButtons</a></span><span class="op">(</span><span class="st">'radio'</span>, <span class="st">'Radio'</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'a'</span>, <span class="st">'b'</span><span class="op">)</span><span class="op">)</span>,
+    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/radioButtons.html">radioButtons</a></span><span class="op">(</span><span class="st">'radio'</span>, <span class="st">'Radio'</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'a'</span>, <span class="st">'b'</span><span class="op">)</span><span class="op">)</span>,
+    <span class="fu"><a href="../reference/tippy_this.html">tippyThis</a></span><span class="op">(</span>
+      <span class="st">"radio"</span>,
       <span class="st">"RADIO"</span>
     <span class="op">)</span>,
-    <span class="fu">withTippy</span><span class="op">(</span>
-      <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/checkboxInput.html">checkboxInput</a></span><span class="op">(</span><span class="st">'check'</span>, <span class="st">'Check'</span><span class="op">)</span>,
+    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/checkboxInput.html">checkboxInput</a></span><span class="op">(</span><span class="st">'check'</span>, <span class="st">'Checkbox'</span><span class="op">)</span>,
+    <span class="fu"><a href="../reference/tippy_this.html">tippyThis</a></span><span class="op">(</span>
+      <span class="st">"check"</span>,
       <span class="st">"CHECKBOX"</span>
     <span class="op">)</span>,
-    <span class="fu">withTippy</span><span class="op">(</span>
-      <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/actionButton.html">actionButton</a></span><span class="op">(</span><span class="st">'action'</span>, <span class="st">'Action'</span><span class="op">)</span>,
+    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/actionButton.html">actionButton</a></span><span class="op">(</span><span class="st">'action'</span>, <span class="st">'Action'</span><span class="op">)</span>,
+    <span class="fu"><a href="../reference/tippy_this.html">tippyThis</a></span><span class="op">(</span>
+      <span class="st">"action"</span>,
       <span class="st">"BUTTON"</span>
     <span class="op">)</span>,
-    
-    <span class="fu"><a href="../reference/deprecated.html">with_tippy</a></span><span class="op">(</span>
-      <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/sliderInput.html">sliderInput</a></span><span class="op">(</span><span class="st">'slider'</span>, <span class="st">'Slider'</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0.5</span><span class="op">)</span>,
+    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/sliderInput.html">sliderInput</a></span><span class="op">(</span><span class="st">'slider'</span>, <span class="st">'Slider'</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0.5</span><span class="op">)</span>,
+    <span class="fu"><a href="../reference/tippy_this.html">tippyThis</a></span><span class="op">(</span>
+      <span class="st">"slider"</span>,
       <span class="st">"SLIDER"</span>
     <span class="op">)</span>,
-    <span class="fu">withTippy</span><span class="op">(</span>
-      <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/dateInput.html">dateInput</a></span><span class="op">(</span><span class="st">'date'</span>, <span class="st">'Date'</span><span class="op">)</span>,
+    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/dateInput.html">dateInput</a></span><span class="op">(</span><span class="st">'date'</span>, <span class="st">'Date'</span><span class="op">)</span>,
+    <span class="fu"><a href="../reference/tippy_this.html">tippyThis</a></span><span class="op">(</span>
+      <span class="st">"date"</span>,
       <span class="st">"DATE"</span>
     <span class="op">)</span>
     
   <span class="op">)</span>,
   server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span>
 <span class="op">)</span></code></pre></div>
-<p>You can also easily call tippy on multiple elements and create themes with <code>tippyTheme</code>.</p>
+</div>
+<div id="defaults" class="section level2">
+<h2 class="hasAnchor">
+<a href="#defaults" class="anchor"></a>Defaults</h2>
+<p>You can also easily call tippy on multiple elements and create themes with <code>tippyDefault</code>.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.rstudio.com/">shiny</a></span><span class="op">)</span>
 
@@ -159,7 +173,7 @@
         <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html">p</a></span><span class="op">(</span><span class="st">"Some text"</span>, class <span class="op">=</span> <span class="st">"tip"</span><span class="op">)</span>,
         <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html">p</a></span><span class="op">(</span><span class="st">"Some text"</span>, class <span class="op">=</span> <span class="st">"tip"</span><span class="op">)</span>,
         <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html">p</a></span><span class="op">(</span><span class="st">"Some text"</span>, class <span class="op">=</span> <span class="st">"tip"</span><span class="op">)</span>,
-        <span class="fu"><a href="../reference/tippyTheme.html">tippyTheme</a></span><span class="op">(</span><span class="st">".tip"</span>, content <span class="op">=</span> <span class="st">"Tooltip"</span><span class="op">)</span>
+        <span class="fu">tippyTheme</span><span class="op">(</span><span class="st">".tip"</span>, content <span class="op">=</span> <span class="st">"Tooltip"</span><span class="op">)</span>
       <span class="op">)</span>,
       <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/column.html">column</a></span><span class="op">(</span>
         <span class="fl">3</span>, 
@@ -173,11 +187,69 @@
  <span class="op">)</span>,
  server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span>
 <span class="op">)</span></code></pre></div>
+</div>
+<div id="themes" class="section level2">
+<h2 class="hasAnchor">
+<a href="#themes" class="anchor"></a>Themes</h2>
+<p>Currently 4 themes:</p>
+<ul>
+<li><code>light</code></li>
+<li><code>light-border</code></li>
+<li><code>material</code></li>
+<li><code>translucent</code></li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">library</span>(shiny)</a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="kw">library</span>(tippy)</a>
+<a class="sourceLine" id="cb3-3" title="3"></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="kw">shinyApp</span>(</a>
+<a class="sourceLine" id="cb3-5" title="5">  <span class="dt">ui =</span> <span class="kw">fluidPage</span>(</a>
+<a class="sourceLine" id="cb3-6" title="6">    <span class="kw">h4</span>(<span class="st">"Hover me"</span>, <span class="dt">id =</span> <span class="st">"tip"</span>),</a>
+<a class="sourceLine" id="cb3-7" title="7">    <span class="kw">tippyThis</span>(</a>
+<a class="sourceLine" id="cb3-8" title="8">      <span class="st">"tip"</span></a>
+<a class="sourceLine" id="cb3-9" title="9">      <span class="st">"Tooltip"</span>,</a>
+<a class="sourceLine" id="cb3-10" title="10">      <span class="dt">theme =</span> <span class="st">"material"</span></a>
+<a class="sourceLine" id="cb3-11" title="11">    )</a>
+<a class="sourceLine" id="cb3-12" title="12">  ),</a>
+<a class="sourceLine" id="cb3-13" title="13">  <span class="dt">server =</span> <span class="cf">function</span>(input, output) {}</a>
+<a class="sourceLine" id="cb3-14" title="14">)</a></code></pre></div>
+</div>
+<div id="plot" class="section level2">
+<h2 class="hasAnchor">
+<a href="#plot" class="anchor"></a>Plot</h2>
+<p>You can also use a plot within a tooltip.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.rstudio.com/">shiny</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://echarts4r.john-coene.com/">echarts4r</a></span><span class="op">)</span>
+
+<span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidPage</a></span><span class="op">(</span>
+  <span class="fu"><a href="../reference/useTippy.html">useTippy</a></span><span class="op">(</span><span class="op">)</span>,
+  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/plotOutput.html">plotOutput</a></span><span class="op">(</span><span class="st">"plot"</span><span class="op">)</span>,
+  <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html">h5</a></span><span class="op">(</span><span class="st">"plot tooltip"</span>, id <span class="op">=</span> <span class="st">"plotTip"</span><span class="op">)</span>
+<span class="op">)</span>
+
+<span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span>
+  <span class="va">output</span><span class="op">$</span><span class="va">plot</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderPlot.html">renderPlot</a></span><span class="op">(</span><span class="op">{</span>
+    <span class="fu"><a href="https://rdrr.io/r/base/on.exit.html">on.exit</a></span><span class="op">(</span><span class="op">{</span>
+      <span class="fu"><a href="../reference/tippy_plot.html">tippy_plot</a></span><span class="op">(</span>
+        <span class="st">"plotTip"</span>, 
+        <span class="st">"plot"</span>, 
+        theme <span class="op">=</span> <span class="st">"light"</span>,
+        .hidePlot <span class="op">=</span> <span class="cn">TRUE</span>
+      <span class="op">)</span>
+    <span class="op">}</span><span class="op">)</span>
+    <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">cars</span><span class="op">)</span>
+  <span class="op">}</span><span class="op">)</span>
+<span class="op">}</span>
+
+<span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html">shinyApp</a></span><span class="op">(</span><span class="va">ui</span>, <span class="va">server</span><span class="op">)</span></code></pre></div>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-      </div>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
+</div>
 
 </div>
 

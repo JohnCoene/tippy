@@ -16,7 +16,10 @@ knitr::opts_chunk$set(
 library(tippy)
 ```
 
-Works in Shiny apps, you can apply the tooltip to another element with `withTippy`.
+## Basic
+
+Works in Shiny apps, you can apply the tooltip to 
+another element with `withTippy`.
 
 ```r
 library(shiny)
@@ -24,37 +27,44 @@ library(tippy)
 
 shinyApp(
   ui = fluidPage(
-    withTippy(
-      textInput('text', 'Text'),
+    textInput('text', 'Text'),
+    tippyThis(
+      id = "text",
       content = "TEXT"
     ),
-    withTippy(
-      selectInput('select', 'Select', c('a', 'b')),
+    selectInput('select', 'Select', c('a', 'b')),
+    tippyThis(
+      "select",
       "SELECT"
     ),
-    withTippy(
-      numericInput('numeric', 'Numeric', NULL),
+    numericInput('numeric', 'Numeric', NULL),
+    tippyThis(
+      "Numeric",
       "NUMERIC"
     ),
-    withTippy(
-      radioButtons('radio', 'Radio', c('a', 'b')),
+    radioButtons('radio', 'Radio', c('a', 'b')),
+    tippyThis(
+      "radio",
       "RADIO"
     ),
-    withTippy(
-      checkboxInput('check', 'Check'),
+    checkboxInput('check', 'Checkbox'),
+    tippyThis(
+      "check",
       "CHECKBOX"
     ),
-    withTippy(
-      actionButton('action', 'Action'),
+    actionButton('action', 'Action'),
+    tippyThis(
+      "action",
       "BUTTON"
     ),
-    
-    with_tippy(
-      sliderInput('slider', 'Slider', 0, 1, 0.5),
+    sliderInput('slider', 'Slider', 0, 1, 0.5),
+    tippyThis(
+      "slider",
       "SLIDER"
     ),
-    withTippy(
-      dateInput('date', 'Date'),
+    dateInput('date', 'Date'),
+    tippyThis(
+      "date",
       "DATE"
     )
     
@@ -63,8 +73,10 @@ shinyApp(
 )
 ```
 
+## Defaults
+
 You can also easily call tippy on multiple elements and
-create themes with `tippyTheme`.
+create themes with `tippyDefault`.
 
 ```r
 library(shiny)
@@ -95,4 +107,61 @@ shinyApp(
  ),
  server = function(input, output, session) {}
 )
+```
+
+## Themes
+
+Currently 4 themes:
+
+- `light`
+- `light-border`
+- `material`
+- `translucent`
+
+```r
+library(shiny)
+library(tippy)
+
+shinyApp(
+  ui = fluidPage(
+    h4("Hover me", id = "tip"),
+    tippyThis(
+      "tip"
+      "Tooltip",
+      theme = "material"
+    )
+  ),
+  server = function(input, output) {}
+)
+```
+
+## Plot
+
+You can also use a plot within a tooltip.
+
+```r
+library(shiny)
+library(echarts4r)
+
+ui <- fluidPage(
+  useTippy(),
+  plotOutput("plot"),
+  h5("plot tooltip", id = "plotTip")
+)
+
+server <- function(input, output) {
+  output$plot <- renderPlot({
+    on.exit({
+      tippy_plot(
+        "plotTip", 
+        "plot", 
+        theme = "light",
+        .hidePlot = TRUE
+      )
+    })
+    plot(cars)
+  })
+}
+
+shinyApp(ui, server)
 ```

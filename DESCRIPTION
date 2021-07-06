@@ -1,6 +1,6 @@
 Package: tippy
 Title: Add Tooltips to 'R markdown' Documents or 'Shiny' Apps
-Version: 0.2.0
+Version: 1.0.0
 Authors@R: person("John", "Coene", email = "jcoenep@gmail.com", role = c("aut", "cre"))
 Description: 'Htmlwidget' of 'Tippyjs' to add tooltips to 'Shiny' apps and 'R markdown' documents.
 Depends: R (>= 3.4.0)

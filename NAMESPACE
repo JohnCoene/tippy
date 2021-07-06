@@ -2,7 +2,7 @@
 
 S3method(print,tippy)
 export(tippy)
-export(tippyTheme)
+export(tippyDefault)
 export(tippyThis)
 export(tippy_class)
 export(tippy_destroy)
