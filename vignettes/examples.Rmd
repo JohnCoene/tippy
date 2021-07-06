@@ -126,7 +126,7 @@ shinyApp(
   ui = fluidPage(
     h4("Hover me", id = "tip"),
     tippyThis(
-      "tip"
+      "tip",
       "Tooltip",
       theme = "material"
     )
