@@ -173,7 +173,7 @@
         <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html">p</a></span><span class="op">(</span><span class="st">"Some text"</span>, class <span class="op">=</span> <span class="st">"tip"</span><span class="op">)</span>,
         <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html">p</a></span><span class="op">(</span><span class="st">"Some text"</span>, class <span class="op">=</span> <span class="st">"tip"</span><span class="op">)</span>,
         <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html">p</a></span><span class="op">(</span><span class="st">"Some text"</span>, class <span class="op">=</span> <span class="st">"tip"</span><span class="op">)</span>,
-        <span class="fu">tippyTheme</span><span class="op">(</span><span class="st">".tip"</span>, content <span class="op">=</span> <span class="st">"Tooltip"</span><span class="op">)</span>
+        <span class="fu"><a href="../reference/tippyTheme.html">tippyTheme</a></span><span class="op">(</span><span class="st">".tip"</span>, content <span class="op">=</span> <span class="st">"Tooltip"</span><span class="op">)</span>
       <span class="op">)</span>,
       <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/column.html">column</a></span><span class="op">(</span>
         <span class="fl">3</span>, 
@@ -214,11 +214,34 @@
   server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span>
 <span class="op">)</span></code></pre></div>
 </div>
+<div id="theme" class="section level2">
+<h2 class="hasAnchor">
+<a href="#theme" class="anchor"></a>Theme</h2>
+<p>You can also use <code>tippyTheme</code> to define a new theme.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.rstudio.com/">shiny</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tippy.john-coene.com/">tippy</a></span><span class="op">)</span>
+
+<span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidPage</a></span><span class="op">(</span>
+  <span class="fu"><a href="../reference/useTippy.html">useTippy</a></span><span class="op">(</span><span class="op">)</span>,
+  <span class="fu"><a href="../reference/tippyTheme.html">tippyTheme</a></span><span class="op">(</span><span class="st">"myTheme"</span>, box_bg <span class="op">=</span> <span class="st">"darkred"</span><span class="op">)</span>,
+  <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html">h5</a></span><span class="op">(</span><span class="st">"plot tooltip"</span>, id <span class="op">=</span> <span class="st">"plotTip"</span><span class="op">)</span>,
+  <span class="fu"><a href="../reference/tippy_this.html">tippyThis</a></span><span class="op">(</span>
+    <span class="st">"plotTip"</span>,
+    <span class="st">"Hello world"</span>,
+    theme <span class="op">=</span> <span class="st">"myTheme"</span>
+  <span class="op">)</span>
+<span class="op">)</span>
+
+<span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span>
+
+<span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html">shinyApp</a></span><span class="op">(</span><span class="va">ui</span>, <span class="va">server</span><span class="op">)</span></code></pre></div>
+</div>
 <div id="plot" class="section level2">
 <h2 class="hasAnchor">
 <a href="#plot" class="anchor"></a>Plot</h2>
 <p>You can also use a plot within a tooltip.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.rstudio.com/">shiny</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://echarts4r.john-coene.com/">echarts4r</a></span><span class="op">)</span>
 

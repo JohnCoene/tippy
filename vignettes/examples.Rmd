@@ -135,6 +135,30 @@ shinyApp(
 )
 ```
 
+## Theme
+
+You can also use `tippyTheme` to define a new theme.
+
+```r
+library(shiny)
+library(tippy)
+
+ui <- fluidPage(
+  useTippy(),
+  tippyTheme("myTheme", box_bg = "darkred"),
+  h5("plot tooltip", id = "plotTip"),
+  tippyThis(
+    "plotTip",
+    "Hello world",
+    theme = "myTheme"
+  )
+)
+
+server <- function(input, output) {}
+
+shinyApp(ui, server)
+```
+
 ## Plot
 
 You can also use a plot within a tooltip.
