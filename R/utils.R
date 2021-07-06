@@ -47,7 +47,6 @@ make_selector <- function(selector, .is_tag = FALSE){
     selector = make_selector(selector, .is_tag), 
     options = dropNulls(list(...))
   )
-  print(opts)
   opts <- toJSON(opts, auto_unbox = TRUE)
   opts <- as.character(opts)
   HTML(
