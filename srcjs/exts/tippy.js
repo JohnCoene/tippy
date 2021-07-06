@@ -98,6 +98,18 @@ Shiny.addCustomMessageHandler('tippy-method', function(msg){
 		case 'disable':
 			window.tooltips.disable(msg.selector);
 			break;
+		case 'enable':
+			window.tooltips.enable(msg.selector);
+			break;
+		case 'show':
+			window.tooltips.show(msg.selector);
+			break;
+		case 'hide':
+			window.tooltips.hide(msg.selector);
+			break;
+		case 'destroy':
+			window.tooltips.destroy(msg.selector);
+			break;
 	}
 });
 

@@ -49,7 +49,10 @@ server <- function(input, output) {
         "plotTip", 
         "plot", 
         theme = "light",
-        .hidePlot = TRUE
+        .hidePlot = TRUE,
+				 .width = 600,
+				 .height = 200,
+        maxWidth = 700
       )
     })
     plot(cars)
