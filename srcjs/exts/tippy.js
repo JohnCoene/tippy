@@ -25,68 +25,88 @@ class Tip {
 		this.tooltips.get(selector);
 	}
 
-	disable(selectors){
-		if(selectors != null){
+	disable(selectors = []){
+		if(selectors.length > 0){
 			selectors.forEach((selector) => {
-				this.tooltips.get(selector).disable();
+				this.tooltips.get(selector).forEach((tip) => {
+					tip.disable();
+				});
 			});
 			return ;
 		}
 
-		this.tooltips.forEach((value) => {
-			value[0].disable();
+		this.tooltips.forEach((tips) => {
+			tips.forEach((tip) => {
+				tip.disable();
+			})
 		});
 	}
 
-	enable(selectors){
-		if(selectors != null){
+	enable(selectors = []){
+		if(selectors.length > 0){
 			selectors.forEach((selector) => {
-				this.tooltips.get(selector).enable();
+				this.tooltips.get(selector).forEach((tip) => {
+					tip.enable();
+				});
 			});
 			return ;
 		}
 
-		this.tooltips.forEach((value) => {
-			value[0].enable();
+		this.tooltips.forEach((tips) => {
+			tips.forEach((tip) => {
+				tip.enable();
+			})
 		});
 	}
 	
-	destroy(selectors){
-		if(selectors != null){
+	destroy(selectors = []){
+		if(selectors.length > 0){
 			selectors.forEach((selector) => {
-				this.tooltips.get(selector).destroy();
+				this.tooltips.get(selector).forEach((tip) => {
+					tip.destroy();
+				});
 			});
 			return ;
 		}
 
-		this.tooltips.forEach((value) => {
-			value[0].destroy();
+		this.tooltips.forEach((tips) => {
+			tips.forEach((tip) => {
+				tip.destroy();
+			})
 		});
 	}
 
-	show(selectors){
-		if(selectors != null){
+	show(selectors = []){
+		if(selectors.length > 0){
 			selectors.forEach((selector) => {
-				this.tooltips.get(selector).show();
+				this.tooltips.get(selector).forEach((tip) => {
+					tip.show();
+				});
 			});
 			return ;
 		}
 
-		this.tooltips.forEach((value) => {
-			value[0].show();
+		this.tooltips.forEach((tips) => {
+			tips.forEach((tip) => {
+				tip.show();
+			})
 		});
 	}
 
-	hide(selectors){
-		if(selectors != null){
+	hide(selectors = []){
+		if(selectors.length > 0){
 			selectors.forEach((selector) => {
-				this.tooltips.get(selector).hide();
+				this.tooltips.get(selector).forEach((tip) => {
+					tip.hide();
+				});
 			});
 			return ;
 		}
 
-		this.tooltips.forEach((value) => {
-			value[0].hide();
+		this.tooltips.forEach((tips) => {
+			tips.forEach((tip) => {
+				tip.hide();
+			})
 		});
 	}
 }
@@ -96,19 +116,19 @@ window.tooltips = new Tip();
 Shiny.addCustomMessageHandler('tippy-method', function(msg){
 	switch(msg.method){
 		case 'disable':
-			window.tooltips.disable(msg.selector);
+			window.tooltips.disable(msg.selectors);
 			break;
 		case 'enable':
-			window.tooltips.enable(msg.selector);
+			window.tooltips.enable(msg.selectors);
 			break;
 		case 'show':
-			window.tooltips.show(msg.selector);
+			window.tooltips.show(msg.selectors);
 			break;
 		case 'hide':
-			window.tooltips.hide(msg.selector);
+			window.tooltips.hide(msg.selectors);
 			break;
 		case 'destroy':
-			window.tooltips.destroy(msg.selector);
+			window.tooltips.destroy(msg.selectors);
 			break;
 	}
 });

@@ -8,6 +8,7 @@
 these were part of the htmlwidget which is useless.
 - Initial `tippy_plot` to use plots in tooltips.
 - Support new themes.
+- Allow calling methods on tooltips (e.g.: disable, show, hide, etc.)
 
 ## tippy 0.1.0
 

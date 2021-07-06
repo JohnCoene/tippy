@@ -6,12 +6,11 @@ export const callTippy = (params) => {
 
 	let instance;
 	if(params.options.content != undefined){
+		params.options.allowHTML = true;
 		instance = tippy(params.selector, params.options);
 		window.tooltips.add(params.selector, instance);
 		return ;
 	}
-	
-	params.options.allowHTML = true;
 
 	instance = tippy(params.selector);
 	window.tooltips.add(params.selector, instance);
