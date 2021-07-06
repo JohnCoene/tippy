@@ -32,7 +32,7 @@ tippy <- function(element, content, ...) {
     stop("Cannot assign tooltip to `tagList`", call. = FALSE)
 
   if(!inherits(element, "shiny.tag"))
-    element <- span(element[1], id = random_id())
+    element <- span(HTML(element[1]), id = random_id())
 
   id <- element$attribs$id
 
