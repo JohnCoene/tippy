@@ -101,3 +101,78 @@ tippyThis <- function(selector, content = NULL, ..., .is_tag = FALSE){
     )
   )
 }
+
+#' Methods
+#' 
+#' Call tippy methods on tooltips.
+#' 
+#' @param selectors Selectors of tooltips to
+#' apply the method. If `NULL` then the method
+#' is applied to _all tooltips._
+#' @param .session A valid shiny session.
+#' @param .is_tag Whether `selectors` are tags,
+#' e.g.: `<p>`.
+#' 
+#' @name methods
+#' 
+#' @export
+tippy_disable <- function(
+  selectors = NULL, 
+  .session = shiny::getDefaultReactiveDomain(),
+  .is_tag = FALSE
+){
+  send_method(selectors, "disable", .session = .session)
+}
+
+#' @rdname methods
+#' @export 
+tippy_enable <- function(
+  selectors = NULL, 
+  .session = shiny::getDefaultReactiveDomain(),
+  .is_tag = FALSE
+) {
+  send_method(selectors, "enable", .session = .session)
+}
+
+#' @rdname methods
+#' @export 
+tippy_destroy <- function(
+  selectors = NULL, 
+  .session = shiny::getDefaultReactiveDomain(),
+  .is_tag = FALSE
+) {
+  send_method(selectors, "destroy", .session = .session)
+}
+
+#' @rdname methods
+#' @export 
+tippy_show <- function(
+  selectors = NULL, 
+  .session = shiny::getDefaultReactiveDomain(),
+  .is_tag = FALSE
+) {
+  send_method(selectors, "show", .session = .session)
+}
+
+#' @rdname methods
+#' @export 
+tippy_hide <- function(
+  selectors = NULL, 
+  .session = shiny::getDefaultReactiveDomain(),
+  .is_tag = FALSE
+) {
+  send_method(selectors, "hide", .session = .session)
+}
+
+send_method <- function(selectors, method, ..., .session){
+  .session$sendCustomMessage(
+    "tippy-method",
+    list(
+      method = method,
+      selectors = as.list(
+        make_selectors(selectors)
+      ),
+      opts = list(...)
+    )
+  )
+}

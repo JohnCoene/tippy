@@ -3,10 +3,14 @@ import 'tippy.js/dist/tippy.css'; // optional for styling
 import 'tippy.js/animations/scale.css';
 
 export const callTippy = (params) => {
+
+	let instance;
 	if(params.options.content != undefined){
-		tippy(params.selector, params.options);
+		instance = tippy(params.selector, params.options);
+		window.tooltips.add(params.selector, instance);
 		return ;
 	}
 
-	tippy(params.selector);
+	instance = tippy(params.selector);
+	window.tooltips.add(params.selector, instance);
 }

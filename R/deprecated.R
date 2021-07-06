@@ -4,7 +4,8 @@
 #' 
 #' @param class Class of elements to apply tooltip to.
 #' @param ... Any option from \href{https://atomiks.github.io/tippyjs/#all-options}{the official documentation}.
-#' @param tooltip,content Content of tooltip
+#' @param tooltip Content of tooltip.
+#' @inheritParams tippy
 #' 
 #' @section Functions:
 #' \itemize{
@@ -32,14 +33,14 @@
 #' 
 #' @seealso \href{https://atomiks.github.io/tippyjs/}{official documentation}
 #' 
-#' @name use_tippy_funcs
+#' @name deprecated
 #' @export
 use_tippy <- function(){
   .Deprecated("useTippy", "tippy")
   useTippy()
 }
 
-#' @rdname use_tippy_funcs
+#' @rdname deprecated
 #' @export
 tippy_class <- function(class, ...){
   .Deprecated("tippy", package = "tippy")
@@ -49,7 +50,7 @@ tippy_class <- function(class, ...){
   )
 }
 
-#' @rdname tippy
+#' @rdname deprecated
 #' @export
 with_tippy <- function(element, tooltip, ...){
   .Deprecated("tippy", "tippy", "Deprecated: Use the tippy function")

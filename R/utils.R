@@ -40,6 +40,12 @@ make_selector <- function(selector, .is_tag = FALSE){
   sprintf("#%s", selector)
 }
 
+#' Selerialised Make Selector
+#' @keywords internal
+make_selectors <- function(selectors, .is_tag){
+  sapply(selectors, make_selector, .is_tag = .is_tag)
+}
+
 #' Tippy an element from its selector
 #' @keywords internal
 .tippy_this <- function(selector, ..., .is_tag = FALSE){
