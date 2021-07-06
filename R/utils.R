@@ -56,7 +56,7 @@ make_selectors <- function(selectors, .is_tag){
   opts <- toJSON(opts, auto_unbox = TRUE)
   opts <- as.character(opts)
   HTML(
-    sprintf("<script>tippyr.callTippy(%s);</script>", opts)
+    sprintf("<script>tippyr.tip(%s);</script>", opts)
   )
 }
 

@@ -5,7 +5,7 @@ import 'tippy.js/themes/light-border.css';
 import 'tippy.js/themes/material.css';
 import 'tippy.js/themes/translucent.css';
 
-import { callTippy } from './bind';
+import { tip } from './bind';
 import { plot } from './plot';
 
 const defaultProps = (opts) => {
@@ -141,4 +141,4 @@ Shiny.addCustomMessageHandler('tippy-plot', function(msg){
 	plot(msg);
 });
 
-export { callTippy, defaultProps, plot}
+export { tip, defaultProps, plot}
