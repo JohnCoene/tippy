@@ -165,7 +165,7 @@ You can also use a plot within a tooltip.
 
 ```r
 library(shiny)
-library(echarts4r)
+library(tippy)
 
 ui <- fluidPage(
   useTippy(),
