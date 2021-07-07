@@ -45,6 +45,7 @@ tippy_plot <- function(
 	.hidePlot = FALSE,
 	.session = shiny::getDefaultReactiveDomain()
 ) {
+	cat("This is an experimental feature\n")
 	.session$sendCustomMessage(
 		"tippy-plot",
 		list(
