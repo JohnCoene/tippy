@@ -113,6 +113,34 @@ tippyThis <- function(selector, content = NULL, ..., .is_tag = FALSE){
 #' @param .is_tag Whether `selectors` are tags,
 #' e.g.: `<p>`.
 #' 
+#' @examples 
+#' library(shiny)
+#' library(tippy)
+#' 
+#' ui <- fluidPage(
+#'   useTippy(),
+#'   h5("plot tooltip", class = "tip"),
+#'   p("Another tooltip", class = "tip"),
+#'   tippyThis(
+#'     ".tip",
+#'     "This is indeed a tooltip"
+#'   ),
+#'   actionButton("disable", "Disable"),
+#'   actionButton("enable", "Enable")
+#' )
+#' 
+#' server <- function(input, output) {
+#'   observeEvent(input$disable, {
+#'     tippy_disable()
+#'   });
+#' 
+#'   observeEvent(input$enable, {
+#'     tippy_enable()
+#'   })
+#' }
+#' 
+#' shinyApp(ui, server)
+#' 
 #' @name methods
 #' 
 #' @export
