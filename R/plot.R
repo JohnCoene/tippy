@@ -32,8 +32,9 @@
 #'   })
 #' }
 #' 
-#' if(interactive())
+#' if(interactive()){
 #'   shinyApp(ui, server)
+#' }
 #' 
 #' @export 
 tippy_plot <- function(

@@ -81,8 +81,9 @@ print.tippy <- function(x, ...){
 #' 
 #' server <- function(input, output) {}
 #' 
-#' if(interactive())
+#' if(interactive()){
 #'  shinyApp(ui, server)
+#' }
 #' 
 #' @name tippyThis
 #' @export
@@ -139,8 +140,9 @@ tippyThis <- function(selector, content = NULL, ..., .is_tag = FALSE){
 #'   })
 #' }
 #' 
-#' if(interactive())
+#' if(interactive()) {
 #'  shinyApp(ui, server)
+#' }
 #' 
 #' @name methods
 #' 

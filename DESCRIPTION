@@ -10,7 +10,3 @@ Imports: htmlwidgets, htmltools, shiny, jsonlite
 RoxygenNote: 7.1.2
 URL: https://tippy.john-coene.com/
 BugReports: https://github.com/JohnCoene/tippy/issues
-Suggests: 
-    rmarkdown,
-    knitr
-VignetteBuilder: knitr

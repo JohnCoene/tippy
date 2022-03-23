@@ -23,8 +23,9 @@
 #' 
 #' server <- function(input, output) {}
 #' 
-#' if(interactive())
+#' if(interactive()){
 #'   shinyApp(ui, server)
+#' }
 #' 
 #' @importFrom shiny tags
 #' 

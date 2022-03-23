@@ -14,9 +14,9 @@
 #' }
 #' 
 #' @examples 
-#' if(interactive()){
 #' library(shiny)
 #' 
+#' if(interactive()){
 #' shinyApp(
 #'   ui = fluidPage(
 #'     p("Some text", class = "tooltip"),
