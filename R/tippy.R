@@ -139,7 +139,8 @@ tippyThis <- function(selector, content = NULL, ..., .is_tag = FALSE){
 #'   })
 #' }
 #' 
-#' shinyApp(ui, server)
+#' if(interactive())
+#'  shinyApp(ui, server)
 #' 
 #' @name methods
 #' 

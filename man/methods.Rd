@@ -52,3 +52,33 @@ e.g.: `<p>`.}
 \description{
 Call tippy methods on tooltips.
 }
+\examples{
+library(shiny)
+library(tippy)
+
+ui <- fluidPage(
+  useTippy(),
+  h5("plot tooltip", class = "tip"),
+  p("Another tooltip", class = "tip"),
+  tippyThis(
+    ".tip",
+    "This is indeed a tooltip"
+  ),
+  actionButton("disable", "Disable"),
+  actionButton("enable", "Enable")
+)
+
+server <- function(input, output) {
+  observeEvent(input$disable, {
+    tippy_disable()
+  });
+
+  observeEvent(input$enable, {
+    tippy_enable()
+  })
+}
+
+if(interactive())
+ shinyApp(ui, server)
+
+}

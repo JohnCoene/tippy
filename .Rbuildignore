@@ -15,3 +15,4 @@ test.R
 ^webpack\.common\.js$
 ^index\.md$
 ^pkgdown$
+^CRAN-SUBMISSION$
