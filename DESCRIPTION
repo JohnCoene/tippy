@@ -6,7 +6,7 @@ Description: 'Htmlwidget' of 'Tippyjs' to add tooltips to 'Shiny' apps and 'R ma
 Depends: R (>= 3.4.0)
 License: MIT + file LICENSE
 Encoding: UTF-8
-LazyData: true
+LazyData: false
 Imports: htmlwidgets, htmltools, shiny, jsonlite
 RoxygenNote: 7.1.2
 URL: https://tippy.john-coene.com/
