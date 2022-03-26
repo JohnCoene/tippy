@@ -32,7 +32,7 @@
 #'   })
 #' }
 #' 
-#' if(interactive()){
+#' if(FALSE){
 #'   shinyApp(ui, server)
 #' }
 #' 

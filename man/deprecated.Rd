@@ -36,7 +36,7 @@ __Deprecated.__ Dynamically use tippy.
 \examples{
 library(shiny)
 
-if(interactive()){
+if(FALSE){
 shinyApp(
   ui = fluidPage(
     p("Some text", class = "tooltip"),

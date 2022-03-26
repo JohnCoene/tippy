@@ -17,10 +17,10 @@ tippy(element, content, ...)
 Add tooltips to an element.
 }
 \examples{
-library(shiny)
-
-tippy("Hover me!", content = "Hi, I'm the tooltip!")
-tippy(h3("Hello"), content = "World")
+if(FALSE){
+ tippy("Hover me!", content = "Hi, I'm the tooltip!")
+ tippy(h3("Hello"), content = "World")
+}
 
 }
 \seealso{

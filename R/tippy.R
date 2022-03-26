@@ -7,10 +7,10 @@
 #' @param ... Any other options from \href{https://atomiks.github.io/tippyjs/v6/all-props/}{the official documentation}.
 #'
 #' @examples
-#' library(shiny)
-#' 
-#' tippy("Hover me!", content = "Hi, I'm the tooltip!")
-#' tippy(h3("Hello"), content = "World")
+#' if(FALSE){
+#'  tippy("Hover me!", content = "Hi, I'm the tooltip!")
+#'  tippy(h3("Hello"), content = "World")
+#' }
 #' 
 #' @seealso \href{https://atomiks.github.io/tippyjs/}{official documentation}
 #'
@@ -81,7 +81,7 @@ print.tippy <- function(x, ...){
 #' 
 #' server <- function(input, output) {}
 #' 
-#' if(interactive()){
+#' if(FALSE){
 #'  shinyApp(ui, server)
 #' }
 #' 
@@ -140,7 +140,7 @@ tippyThis <- function(selector, content = NULL, ..., .is_tag = FALSE){
 #'   })
 #' }
 #' 
-#' if(interactive()) {
+#' if(FALSE) {
 #'  shinyApp(ui, server)
 #' }
 #' 
