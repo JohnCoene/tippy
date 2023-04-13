@@ -152,7 +152,7 @@ tippy_disable <- function(
   .session = shiny::getDefaultReactiveDomain(),
   .is_tag = FALSE
 ){
-  send_method(selectors, "disable", .session = .session)
+  send_method(selectors, "disable", .is_tag = .is_tag, .session = .session)
 }
 
 #' @rdname methods
@@ -162,7 +162,7 @@ tippy_enable <- function(
   .session = shiny::getDefaultReactiveDomain(),
   .is_tag = FALSE
 ) {
-  send_method(selectors, "enable", .session = .session)
+  send_method(selectors, "enable", .is_tag = .is_tag, .session = .session)
 }
 
 #' @rdname methods
@@ -172,7 +172,7 @@ tippy_destroy <- function(
   .session = shiny::getDefaultReactiveDomain(),
   .is_tag = FALSE
 ) {
-  send_method(selectors, "destroy", .session = .session)
+  send_method(selectors, "destroy", .is_tag = .is_tag, .session = .session)
 }
 
 #' @rdname methods
@@ -182,7 +182,7 @@ tippy_show <- function(
   .session = shiny::getDefaultReactiveDomain(),
   .is_tag = FALSE
 ) {
-  send_method(selectors, "show", .session = .session)
+  send_method(selectors, "show", .is_tag = .is_tag, .session = .session)
 }
 
 #' @rdname methods
@@ -192,17 +192,17 @@ tippy_hide <- function(
   .session = shiny::getDefaultReactiveDomain(),
   .is_tag = FALSE
 ) {
-  send_method(selectors, "hide", .session = .session)
+  send_method(selectors, "hide", .is_tag = .is_tag, .session = .session)
 }
 
 # Send data to method
-send_method <- function(selectors, method, ..., .session){
+send_method <- function(selectors, method, ..., .is_tag = FALSE, .session){
   .session$sendCustomMessage(
     "tippy-method",
     list(
       method = method,
       selectors = as.list(
-        make_selectors(selectors)
+        make_selectors(selectors, .is_tag = .is_tag)
       ),
       opts = list(...)
     )

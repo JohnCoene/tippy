@@ -16,3 +16,5 @@ test.R
 ^index\.md$
 ^pkgdown$
 ^CRAN-SUBMISSION$
+^.*\.Rproj$
+^\.Rproj\.user$
