@@ -43,7 +43,8 @@ make_selector <- function(selector, .is_tag = FALSE){
 #' Selerialised Make Selector
 #' @keywords internal
 make_selectors <- function(selectors, .is_tag){
-  sapply(selectors, make_selector, .is_tag = .is_tag)
+  x <- sapply(selectors, make_selector, .is_tag = .is_tag)
+  unname(x)
 }
 
 #' Tippy an element from its selector
